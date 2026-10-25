@@ -1,14 +1,20 @@
+import { Inter, Oswald } from 'next/font/google';
 import '../web/src/styles.css';
+
+// Oswald: la tipografía de titulares de lymon.es; Inter para el texto y las cifras
+const marca = Oswald({ subsets: ['latin'], weight: ['500', '600'], variable: '--font-marca' });
+const texto = Inter({ subsets: ['latin'], variable: '--font-texto' });
 
 export const metadata = {
   title: 'Lymon Finanzas',
-  icons: { icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23c9d636'/><path d='M9 20l5-6 4 4 5-7' stroke='%23142' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" },
   robots: { index: false, follow: false },
 };
 
+export const viewport = { themeColor: '#2d2d2e' };
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${marca.variable} ${texto.variable}`}>
       <body>{children}</body>
     </html>
   );

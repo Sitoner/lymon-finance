@@ -1,4 +1,4 @@
-// Todo pide sesión salvo la pantalla de entrada y el login con Google
+// Todo pide sesión salvo la pantalla de entrada, el login con Google y los archivos de marca (logo, iconos)
 import { NextResponse } from 'next/server';
 import { COOKIE, verificarSesion } from './server/sesion.js';
 
@@ -9,5 +9,5 @@ export async function proxy(request) {
 }
 
 export const config = {
-  matcher: ['/((?!login|api/auth/|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!login|api/auth/|marca/|_next/static|_next/image|favicon.ico|icon.png|apple-icon.png).*)'],
 };

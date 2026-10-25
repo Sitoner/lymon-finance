@@ -3,6 +3,7 @@ import * as XLSX from 'xlsx';
 import { q, one, run, tx, getAjuste, setAjuste, ivaPorDefecto } from './db.js';
 import { cashflow, ingresos, prevision, impuestos } from './metrics.js';
 import { parsearRevolut, guardarRevolut, parsearBeel, guardarBeel, patron } from './importers.js';
+import { emailPermitido } from './sesion.js';
 
 class Fallo extends Error {
   constructor(mensaje, code = 400) { super(mensaje); this.code = code; }
@@ -22,7 +23,7 @@ ruta('GET', '/resumen', async () => {
     one('SELECT COUNT(*)::int n FROM movimientos WHERE tipo IS NULL'),
     one('SELECT * FROM importaciones ORDER BY id DESC LIMIT 1'),
   ]);
-  return { empresa, cashflow: cf, ingresos: ing, ingresosIva: ingIva, prevision: prev, impuestos: imp, pendientes: pend.n, ultimaImportacion: ultima || null };
+  return { empresa, usuario: emailPermitido(), cashflow: cf, ingresos: ing, ingresosIva: ingIva, prevision: prev, impuestos: imp, pendientes: pend.n, ultimaImportacion: ultima || null };
 });
 
 // ---------- categorías ----------
