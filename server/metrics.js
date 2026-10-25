@@ -114,7 +114,11 @@ export async function cashflow({ porGasto = false, sinIva = porGasto } = {}) {
 export async function ingresos({ conIva = false } = {}) {
   const fac = await q(`SELECT fecha, cliente, concepto, ${conIva ? 'COALESCE(total, base)' : 'base'} AS base, clase, meses
     FROM facturas WHERE clase != 'excluida' ORDER BY fecha, id`);
-  if (!fac.length) return { meses: [], mrr: [], clientes: [] };
+  // Sin facturas: las mismas series, vacías (la previsión y el panel las recorren igual)
+  if (!fac.length) {
+    const series = ['mrr', 'mrrNuevo', 'mrrChurn', 'mrrExpansion', 'cuentas', 'nuevas', 'bajas', 'puntual', 'puntualClientes', 'puntualNuevos', 'arpa', 'locales', 'detalleLocales', 'ticketLocal', 'total', 'detalleAltas', 'detalleBajas'];
+    return { meses: [], clientes: [], ...Object.fromEntries(series.map((k) => [k, []])) };
+  }
   const primero = mesDe(fac[0].fecha);
   const ultimo = mesDe(fac[fac.length - 1].fecha);
   const meses = rangoMeses(primero, ultimo);
