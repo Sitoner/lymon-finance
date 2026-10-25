@@ -394,3 +394,5 @@ td.est-ok, td.est-warn, td.est-bad { font-weight: 600; }
 }
 .chart-title select.btn { max-width: 170px; }
 .ptbl td:first-child, .ptbl th:first-child { position: sticky; left: 0; z-index: 2; background: var(--surface); }
+.alert b.inline { display: inline; }
+.aviso-perdidas { border-left: 4px solid var(--critical); }

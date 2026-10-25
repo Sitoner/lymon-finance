@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "lymon-dev-local",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "process.env.DATABASE_URL='';process.env.LYMON_DEV_SIN_LOGIN='1';require('child_process').spawn('npx',['next','dev','-p','3001'],{stdio:'inherit',shell:true})"],
+      "port": 3001
     }
   ]
 }

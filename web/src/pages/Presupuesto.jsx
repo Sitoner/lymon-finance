@@ -15,7 +15,36 @@ function estado(real, presupuesto) {
   return { c: 'ok', t: '✓ Dentro' };
 }
 
-export default function Presupuesto({ anio, avisar }) {
+// Aviso principal: si en los últimos meses el gasto supera lo facturado, cuánto se pierde, cuánto aguanta la caja y qué hay que facturar
+function AvisoPerdidas({ p, datos }) {
+  const { ingreso, gasto, meses } = p.ultimos;
+  if (!meses.length || gasto <= ingreso) return null;
+  const perdida = gasto - ingreso;
+  const cf = datos.cashflow;
+  const i = cf.meses.filter((m) => m < mesActual()).length - 1;
+  const caja = i >= 0 ? cf.saldoBanco[i] ?? cf.saldoFin[i] : null;
+  const runway = i >= 0 ? cf.runway[i] : null;
+  const quema = i >= 0 ? -cf.burn3[i] : 0; // lo que baja la cuenta al mes (media 3 meses, con IVA e impuestos)
+  // Para cubrir el gasto y además guardar lo que piden las reservas (en % del ingreso)
+  const pctReservas = suma(p.partidas.filter((x) => x.tipo === 'reserva' && x.modo === 'pct').map((x) => x.valor));
+  const conReservas = pctReservas > 0 && pctReservas < 100 ? gasto / (1 - pctReservas / 100) : null;
+  return (
+    <div className="alert bad aviso-perdidas">
+      <div>
+        <b>✕ Estáis gastando más de lo que facturáis</b>
+        En los últimos {meses.length} meses ({meses.map(fMes).join(', ')}) el gasto medio ha sido de <b className="inline">{fEur(gasto)} al mes</b> frente
+        a {fEur(ingreso)} facturados: perdéis unos <b className="inline">{fEur(perdida)} al mes</b>.
+        {caja !== null && runway && quema > 0 && <> En el banco la cuenta baja unos {fEur(quema)} al mes (con IVA e impuestos): con la caja actual ({fEur(caja)}) da para unos <b className="inline">{fNum(runway)} meses</b>.</>}
+        <div style={{ marginTop: 6 }}>
+          Para no perder dinero hay que facturar al menos <b className="inline">{fEur(gasto)} al mes</b> o bajar el gasto en {fEur(perdida)} al mes
+          {conReservas && <>; para cubrir también las reservas del presupuesto ({fNum(pctReservas)} %), <b className="inline">{fEur(conReservas)} al mes</b></>}.
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Presupuesto({ anio, avisar, datos }) {
   const [p, setP] = useState(null);
   const [vista, setVista] = useState('reparto');
 
@@ -48,6 +77,8 @@ export default function Presupuesto({ anio, avisar }) {
           </div>
         )}
       </div>
+
+      <AvisoPerdidas p={p} datos={datos} />
 
       {!p.partidas.length ? <Empezar anio={anio} p={p} guardar={guardar} />
         : vista === 'reparto' ? <Reparto anio={anio} p={p} guardar={guardar} />
@@ -318,6 +349,12 @@ function Seguimiento({ p }) {
           <span>presupuesto: {fNum(pctDe(gastoPres, ingreso))} %</span>
         </Stat>
       </div>
+
+      {resultado < 0 && (
+        <div className="alert bad">
+          <div><b>✕ En {periodo} se gastó más de lo que se facturó</b>Faltaron {fEur(-resultado)}{modo === 'acum' ? ' en el acumulado del año' : ''}: salieron de la caja. Mira abajo qué partidas se pasaron.</div>
+        </div>
+      )}
 
       <div className="card">
         <div className="chart-title">

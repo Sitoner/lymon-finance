@@ -102,6 +102,7 @@ export async function presupuesto(anio) {
   const ultimos = real.cerrados.slice(-3);
   const medioUltimos = (p) => media(ultimos.map((m) => Object.entries(real.gasto[m] || {}).reduce((a, [k, v]) => a + (asignar(k)?.id === p.id ? v : 0), 0)));
   const ingresoUltimos = media(ultimos.map((m) => real.ingreso[m]));
+  const gastoUltimos = media(ultimos.map((m) => Object.values(real.gasto[m] || {}).reduce((a, b) => a + b, 0)));
 
   const filas = partidas.map((p) => {
     const plan = previsto.map((x) => r2(importePartida(p, x)));
@@ -123,7 +124,8 @@ export async function presupuesto(anio) {
     partidas: filas,
     sinPartida: sinPartida.map((v, i) => (ingresoReal[i] === null ? null : r2(v))),
     sinPartidaDetalle: Object.entries(sinPartidaDetalle).map(([k, v]) => ({ categoria: k.replace('|', ' › '), importe: r2(v) })).sort((a, b) => b.importe - a.importe),
-    ultimos: { meses: ultimos, ingreso: r2(ingresoUltimos) },
+    // Media de los últimos 3 meses cerrados: facturado y todo el gasto operativo (tenga partida o no)
+    ultimos: { meses: ultimos, ingreso: r2(ingresoUltimos), gasto: r2(gastoUltimos) },
     categorias: (await q("SELECT grupo, subgrupo FROM categorias WHERE tipo = 'Pagos' ORDER BY orden, id"))
       .filter((c) => GRUPOS_GASTO.includes(c.grupo)),
   };
