@@ -80,6 +80,21 @@ CREATE TABLE IF NOT EXISTS saldos_banco (
   PRIMARY KEY (banco, mes)
 );
 
+-- Presupuesto anual: el ingreso se reparte entre partidas. Los ingresos previstos del año van en ajustes («presupuesto:2027»)
+CREATE TABLE IF NOT EXISTS presupuesto_partidas (
+  id SERIAL PRIMARY KEY,
+  anio INTEGER NOT NULL,
+  nombre TEXT NOT NULL,
+  tipo TEXT NOT NULL DEFAULT 'gasto',   -- gasto (se compara con los pagos de sus categorías) | reserva (lo que debe sobrar: impuestos, colchón…)
+  modo TEXT NOT NULL DEFAULT 'pct',     -- pct (% del ingreso del mes) | fijo (€ al mes)
+  valor DOUBLE PRECISION NOT NULL DEFAULT 0,
+  minimo DOUBLE PRECISION,              -- € al mes; solo en modo pct
+  maximo DOUBLE PRECISION,
+  categorias TEXT NOT NULL DEFAULT '[]', -- ["Personal", "Generales|Abogados"]: grupos o grupo|subgrupo de Pagos
+  orden DOUBLE PRECISION NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS presupuesto_partidas_anio ON presupuesto_partidas (anio);
+
 CREATE TABLE IF NOT EXISTS prevision_mes (
   mes TEXT PRIMARY KEY,             -- YYYY-MM
   valores TEXT NOT NULL DEFAULT '{}' -- inputs y valores fijados a mano: {"nuevos":5,"personal":7000}

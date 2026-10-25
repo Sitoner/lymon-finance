@@ -8,6 +8,7 @@ import Movimientos from './pages/Movimientos.jsx';
 import Facturas from './pages/Facturas.jsx';
 import Categorias from './pages/Categorias.jsx';
 import Impuestos from './pages/Impuestos.jsx';
+import Presupuesto from './pages/Presupuesto.jsx';
 import { Icono } from './iconos.jsx';
 
 // [id, nombre, componente, sección del menú]
@@ -17,6 +18,7 @@ const PAGINAS = [
   ['ingresos', 'Ingresos y MRR', Ingresos, 'Análisis'],
   ['prevision', 'Previsión', Prevision, 'Análisis'],
   ['impuestos', 'Impuestos', Impuestos, 'Análisis'],
+  ['presupuesto', 'Presupuesto', Presupuesto, 'Gestión'],
   ['movimientos', 'Movimientos', Movimientos, 'Datos'],
   ['facturas', 'Facturas', Facturas, 'Datos'],
   ['categorias', 'Categorías e IVA', Categorias, 'Datos'],

@@ -4,6 +4,7 @@ import { q, one, run, tx, getAjuste, setAjuste, ivaPorDefecto } from './db.js';
 import { cashflow, ingresos, prevision, impuestos } from './metrics.js';
 import { parsearRevolut, guardarRevolut, parsearBeel, guardarBeel, patron } from './importers.js';
 import { emailPermitido } from './sesion.js';
+import { presupuesto, guardarIngresos, usarPlantilla, crearPartida, editarPartida, borrarPartida } from './presupuesto.js';
 
 class Fallo extends Error {
   constructor(mensaje, code = 400) { super(mensaje); this.code = code; }
@@ -166,6 +167,40 @@ ruta('PUT', '/impuestos/:trimestre', async ({ params, body }) => {
   if (body?.pagado) m[params.trimestre] = true; else delete m[params.trimestre];
   await setAjuste('impuestosPagados', m);
   return impuestos();
+});
+
+// ---------- presupuesto ----------
+const anioValido = (a) => {
+  const n = Number(a);
+  if (!Number.isInteger(n) || n < 2000 || n > 2100) throw new Fallo('Año no válido');
+  return n;
+};
+ruta('GET', '/presupuesto/:anio', ({ params }) => presupuesto(anioValido(params.anio)));
+ruta('PUT', '/presupuesto/:anio/ingresos', async ({ params, body }) => {
+  const anio = anioValido(params.anio);
+  await guardarIngresos(anio, body || {}).catch((e) => { throw new Fallo(e.message); });
+  return presupuesto(anio);
+});
+// Sustituye todas las partidas del año por el reparto recomendado o por el que sale del gasto real
+ruta('POST', '/presupuesto/:anio/plantilla', async ({ params, body }) => {
+  const anio = anioValido(params.anio);
+  await usarPlantilla(anio, body?.origen === 'historico' ? 'historico' : 'recomendado');
+  return presupuesto(anio);
+});
+ruta('POST', '/presupuesto/:anio/partidas', async ({ params, body }) => {
+  const anio = anioValido(params.anio);
+  await crearPartida(anio, body || {}).catch((e) => { throw new Fallo(e.message); });
+  return presupuesto(anio);
+});
+ruta('PATCH', '/presupuesto/:anio/partidas/:id', async ({ params, body }) => {
+  const anio = anioValido(params.anio);
+  await editarPartida(Number(params.id), body || {}).catch((e) => { throw new Fallo(e.message); });
+  return presupuesto(anio);
+});
+ruta('DELETE', '/presupuesto/:anio/partidas/:id', async ({ params }) => {
+  const anio = anioValido(params.anio);
+  await borrarPartida(Number(params.id));
+  return presupuesto(anio);
 });
 
 // ---------- exportar (copia de seguridad en Excel) ----------
