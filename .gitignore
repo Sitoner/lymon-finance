@@ -6,3 +6,6 @@ data/*.db*
 data/pglite
 .env*
 !.env.example
+
+# Copia clonada por error dentro del proyecto
+/lymon-finance/
