@@ -1,0 +1,121 @@
+{
+  "empresa": "LYMON",
+  "saldoInicial": {
+    "fecha": "2025-12-31",
+    "banco": "Revolut",
+    "importe": 2145.53
+  },
+  "categorias": {
+    "Cobros": {
+      "Ventas": [
+        "Puesta en marcha",
+        "MONEI",
+        "Suscripción",
+        "Generación QR",
+        "Datáfono"
+      ],
+      "Cobros atípicos": [
+        "Otros cobros"
+      ]
+    },
+    "Pagos": {
+      "Producción": [
+        "Soporte",
+        "Infraestructura",
+        "Gestión de datos (BBDD)",
+        "Generación QR",
+        "Hardware",
+        "Hosting",
+        "IA",
+        "Puesta en marcha",
+        "Integraciones"
+      ],
+      "Marketing": [
+        "Google Ads",
+        "Meta Ads",
+        "Comisión distribuidor/consultoría",
+        "Folletos publicitarios",
+        "Otomatico",
+        "Outscraper",
+        "Canva",
+        "Calendly",
+        "CRM"
+      ],
+      "Personal": [
+        "Honorarios socios (factura)",
+        "Salarios personal",
+        "Salarios socios",
+        "Coutas Autónomos",
+        "Seguridad Social",
+        "IRPF"
+      ],
+      "Generales": [
+        "Alquiler oficinas",
+        "Suministros",
+        "Servicios Asesoría y Gestoría",
+        "Abogados",
+        "Servidores y Servicios Web",
+        "Viajes",
+        "Comisiones y servicios bancarios",
+        "Seguros",
+        "Marca",
+        "Mermas",
+        "Tributos",
+        "Ordenadores",
+        "Mobiliario",
+        "Licencias de software",
+        "Otros gastos"
+      ]
+    },
+    "Otros cobros/pagos": {
+      "Impuestos y deuda": [
+        "IVA (declaraciones)",
+        "Préstamos - Ingreso Préstamo",
+        "Préstamos - Pago intereses",
+        "Préstamos - Devolución de principal"
+      ],
+      "Inversión Externa": [
+        "Ampliación de Capital",
+        "Subvenciones y ayudas",
+        "Aportaciones de socios no escrituradas",
+        "Repago a socios",
+        "Donación"
+      ]
+    },
+    "Traspaso": {
+      "Traspaso": [
+        "Traspaso entre cuentas"
+      ]
+    }
+  },
+  "prevision": {
+    "mesBase": "2026-08",
+    "meses": [
+      "2026-09",
+      "2026-10",
+      "2026-11",
+      "2026-12"
+    ],
+    "base": {
+      "restaurantes": 72,
+      "recurrentes": 5600,
+      "nuevos": 3
+    },
+    "nuevos": {
+      "2026-09": 5,
+      "2026-10": 10,
+      "2026-11": 10,
+      "2026-12": 5
+    },
+    "parametros": {
+      "precioPuestaMarcha": 250,
+      "mrrPorClienteNuevo": 50,
+      "produccionFijo": 180,
+      "produccionPorRestaurante": 4.5,
+      "marketingFijo": 680,
+      "marketingPorNuevo": 50,
+      "personal": 6500,
+      "generales": 350
+    }
+  }
+}

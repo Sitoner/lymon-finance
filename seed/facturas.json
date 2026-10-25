@@ -1,0 +1,2778 @@
+[
+ {
+  "fecha": "2026-01-01",
+  "numero": "LYM-214",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-01",
+  "numero": "LYM-215",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 260,
+  "total": 314.6,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-22",
+  "numero": "LYM-227",
+  "cliente": "ASOCIACIÓN ESTUDIANTIL JUNIOR EMPRESA RIVIA",
+  "base": 50,
+  "total": 60.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-228",
+  "cliente": "Carlos Segura Quintana",
+  "base": 68.97,
+  "total": 83.45,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-229",
+  "cliente": "CARETTA BEACH SL",
+  "base": 35,
+  "total": 35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-230",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-231",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-234",
+  "cliente": "CAFE MAYDAY SL",
+  "base": 49.93,
+  "total": 60.42,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-235",
+  "cliente": "ENRED SC",
+  "base": 5.1,
+  "total": 6.17,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-236",
+  "cliente": "SAONA EXPLOTACIONES SL",
+  "base": 43.97,
+  "total": 53.2,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-237",
+  "cliente": "José Roberto Fernández Miranda",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-238",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 25,
+  "total": 30.25,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-239",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-240",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 169.74,
+  "total": 205.39,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-241",
+  "cliente": "FILLPLAY SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-242",
+  "cliente": "MADRELIEVITO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-243",
+  "cliente": "CRISCITO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-244",
+  "cliente": "CARAI MELILLA SL",
+  "base": 82.05,
+  "total": 82.05,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-245",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 84.58,
+  "total": 102.34,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-246",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 442.46,
+  "total": 535.38,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-247",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 70.46,
+  "total": 85.26,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-01-31",
+  "numero": "LYM-248",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 170.87,
+  "total": 206.75,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-01",
+  "numero": "LYM-232",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-01",
+  "numero": "LYM-233",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 260,
+  "total": 314.6,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-02",
+  "numero": "LYM-249",
+  "cliente": "ÁLVARO ALEJANDRE SALVADOR",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-02-05",
+  "numero": "LYM-250",
+  "cliente": "Luis Miguel Gómez Cruz",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-02-09",
+  "numero": "LYM-251",
+  "cliente": "Enric Gil I Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-02-11",
+  "numero": "LYM-252",
+  "cliente": "Adrián Pérez Carrillo",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-253",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 56.83,
+  "total": 68.76,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-254",
+  "cliente": "Carlos Segura Quintana",
+  "base": 67.15,
+  "total": 81.25,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-255",
+  "cliente": "CARETTA BEACH SL",
+  "base": 35,
+  "total": 35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-256",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-257",
+  "cliente": "Diego Cortés Ponce",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-258",
+  "cliente": "CARAI MELILLA SL",
+  "base": 69.38,
+  "total": 69.38,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-259",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-262",
+  "cliente": "FILLPLAY SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-263",
+  "cliente": "MADRELIEVITO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-264",
+  "cliente": "CRISCITO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-265",
+  "cliente": "MP PACIFICO SL",
+  "base": 10.95,
+  "total": 13.25,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-266",
+  "cliente": "ENRED SC",
+  "base": 10.47,
+  "total": 12.67,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-267",
+  "cliente": "SAONA EXPLOTACIONES SL",
+  "base": 45.17,
+  "total": 54.66,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-268",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 35.42,
+  "total": 42.86,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-269",
+  "cliente": "LA FLASH MURCIA SL",
+  "base": 8.1,
+  "total": 9.8,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-270",
+  "cliente": "José Roberto Fernández Miranda",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-271",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-272",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 87.47,
+  "total": 105.84,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-273",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 174.81,
+  "total": 211.52,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-274",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 418.33,
+  "total": 506.18,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-275",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 208.27,
+  "total": 252.01,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-02-28",
+  "numero": "LYM-276",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 54.89,
+  "total": 66.42,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-01",
+  "numero": "LYM-260",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-01",
+  "numero": "LYM-261",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 260,
+  "total": 314.6,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-16",
+  "numero": "LYM-278",
+  "cliente": "PIANISTA NICOLAU SL",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-03-16",
+  "numero": "LYM-279",
+  "cliente": "ATLANTIC TURMALINA, SL",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-03-16",
+  "numero": "LYM-280",
+  "cliente": "REAL SOCIEDAD DE GOLF DE NEGURI",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-281",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 94.86,
+  "total": 114.78,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-282",
+  "cliente": "Carlos Segura Quintana",
+  "base": 66.72,
+  "total": 80.73,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-285",
+  "cliente": "LANIAKEA SL",
+  "base": 49.64,
+  "total": 60.06,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-286",
+  "cliente": "GUIJAMA 1998 SL",
+  "base": 30.36,
+  "total": 36.74,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-287",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-288",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": 49.39,
+  "total": 59.76,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-289",
+  "cliente": "Diego Cortés Ponce",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-290",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-291",
+  "cliente": "FILLPLAY SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-292",
+  "cliente": "MADRELIEVITO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-293",
+  "cliente": "CRISCITO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-294",
+  "cliente": "MP PACIFICO SL",
+  "base": 17,
+  "total": 20.57,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-295",
+  "cliente": "SAONA EXPLOTACIONES SL",
+  "base": 40.95,
+  "total": 49.55,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-296",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 27.84,
+  "total": 33.69,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-297",
+  "cliente": "José Roberto Fernández Miranda",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-298",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-299",
+  "cliente": "ASOCIACIÓN ESTUDIANTIL JUNIOR EMPRESA RIVIA",
+  "base": 8.11,
+  "total": 9.81,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-300",
+  "cliente": "Enric Gil I Garcia",
+  "base": 30.5,
+  "total": 36.91,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-301",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 166.26,
+  "total": 201.17,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-303",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 561.6,
+  "total": 679.54,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-304",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 80.62,
+  "total": 97.55,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-305",
+  "cliente": "CARETTA BEACH SL",
+  "base": 34.71,
+  "total": 34.71,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-306",
+  "cliente": "CARAI MELILLA SL",
+  "base": 121.41,
+  "total": 121.41,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-312",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 90.81,
+  "total": 109.88,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-03-31",
+  "numero": "LYM-313",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 263.16,
+  "total": 318.42,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-330",
+  "cliente": "Enric Gil I Garcia",
+  "base": 32.97,
+  "total": 39.89,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-323",
+  "cliente": "Luis Miguel Gómez Cruz",
+  "base": 40.07,
+  "total": 48.48,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-328",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-327",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 28.34,
+  "total": 34.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-333",
+  "cliente": "Maria Teresa Aviles Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-326",
+  "cliente": "ENRED SC",
+  "base": 6.62,
+  "total": 8.01,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-320",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-322",
+  "cliente": "Diego Cortés Ponce",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-334",
+  "cliente": "CARETTA BEACH SL",
+  "base": 35,
+  "total": 35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-325",
+  "cliente": "MP PACIFICO SL",
+  "base": 13.79,
+  "total": 16.69,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-324",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-331",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 172.97,
+  "total": 209.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-332",
+  "cliente": "ALCABO MONTELEVA SL",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-316",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 55.57,
+  "total": 67.24,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-318",
+  "cliente": "LANIAKEA SL",
+  "base": 49.65,
+  "total": 60.08,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-329",
+  "cliente": "ASOCIACIÓN ESTUDIANTIL JUNIOR EMPRESA RIVIA",
+  "base": 21.29,
+  "total": 25.76,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-317",
+  "cliente": "Carlos Segura Quintana",
+  "base": 65.68,
+  "total": 79.47,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-319",
+  "cliente": "GUIJAMA 1998 SL",
+  "base": 26.47,
+  "total": 32.03,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-27",
+  "numero": "LYM-321",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-22",
+  "numero": "LYM-315",
+  "cliente": "FABRICA DE PAN SAN ANTONIO, S.L.",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-04-22",
+  "numero": "LYM-314",
+  "cliente": "Albert Plata Lopez de las Huertas",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-04-07",
+  "numero": "LYM-312",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 90.81,
+  "total": 109.88,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-07",
+  "numero": "LYM-311",
+  "cliente": "Roberto García 2017 SLU",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-04-07",
+  "numero": "LYM-313",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 263.16,
+  "total": 318.42,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-06",
+  "numero": "LYM-309",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-04-06",
+  "numero": "LYM-310",
+  "cliente": "Hugo Barrero Miranda",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-04-02",
+  "numero": "LYM-306",
+  "cliente": "CARAI MELILLA SL",
+  "base": 121.41,
+  "total": 121.41,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-02",
+  "numero": "LYM-308",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 249,
+  "total": 301.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-02",
+  "numero": "LYM-307",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-02",
+  "numero": "LYM-305",
+  "cliente": "CARETTA BEACH SL",
+  "base": 34.71,
+  "total": 34.71,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-01",
+  "numero": "LYM-303",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 561.6,
+  "total": 679.54,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-01",
+  "numero": "LYM-304",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 80.62,
+  "total": 97.55,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-04-01",
+  "numero": "LYM-302",
+  "cliente": "Estefania Bañol López",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-05-31",
+  "numero": "LYM-381",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 172.38,
+  "total": 208.58,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-31",
+  "numero": "LYM-380",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-31",
+  "numero": "LYM-382",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 514.36,
+  "total": 622.38,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-29",
+  "numero": "LYM-379",
+  "cliente": "For Blums Funky Food SL",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-05-28",
+  "numero": "LYM-378",
+  "cliente": "SAO MEDIALUNAS EUROPA SL",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-27",
+  "numero": "LYM-377",
+  "cliente": "ALCABO MONTELEVA SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-24",
+  "numero": "LYM-376",
+  "cliente": "Maria Teresa Aviles Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-23",
+  "numero": "LYM-375",
+  "cliente": "Albert Plata Lopez de las Huertas",
+  "base": 49,
+  "total": 59.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-22",
+  "numero": "LYM-374",
+  "cliente": "BAR MADRE DE DIOS SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-21",
+  "numero": "LYM-373",
+  "cliente": "Andrea Ortega López",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-05-20",
+  "numero": "LYM-372",
+  "cliente": "Tokenbit SL",
+  "base": 150,
+  "total": 181.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-05-19",
+  "numero": "LYM-370",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-19",
+  "numero": "LYM-371",
+  "cliente": "CLUB BILLAR CARTAGENA S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-18",
+  "numero": "LYM-369",
+  "cliente": "Hugo Barrero Miranda",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-15",
+  "numero": "LYM-368",
+  "cliente": "LUIS MIGUEL PASTELERÍAS SL",
+  "base": 249,
+  "total": 301.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-11",
+  "numero": "LYM-367",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 30,
+  "total": 36.3,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-05-11",
+  "numero": "LYM-367",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 20,
+  "total": 24.2,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-05-11",
+  "numero": "LYM-367",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 10,
+  "total": 12.1,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-05-10",
+  "numero": "LYM-366",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-06",
+  "numero": "LYM-362",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 67.6777,
+  "total": 81.89,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-06",
+  "numero": "LYM-363",
+  "cliente": "Álvaro Alejandre Salvador",
+  "base": 100,
+  "total": 121,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-06",
+  "numero": "LYM-364",
+  "cliente": "Marta García Gómez",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-06",
+  "numero": "LYM-361",
+  "cliente": "MONEI DIGITAL PAYMENTS SL",
+  "base": 196.7769,
+  "total": 238.1,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-06",
+  "numero": "LYM-365",
+  "cliente": "Álvaro Alejandre Salvador",
+  "base": -100,
+  "total": -121,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-02",
+  "numero": "LYM-360",
+  "cliente": "CARAI MELILLA SL",
+  "base": 149,
+  "total": 149,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-02",
+  "numero": "LYM-359",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-358",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-356",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-339",
+  "cliente": "PIANISTA NICOLAU SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-353",
+  "cliente": "Jose Tomas Navarro Alcazar",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-340",
+  "cliente": "LA FLASH MURCIA SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-344",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-348",
+  "cliente": "GUIJAMA 1998 SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-346",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 249,
+  "total": 301.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-343",
+  "cliente": "CARETTA BEACH SL",
+  "base": 35,
+  "total": 35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-341",
+  "cliente": "ENRED SC",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-354",
+  "cliente": "Enric Gil I Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-355",
+  "cliente": "ASOCIACIÓN ESTUDIANTIL JUNIOR EMPRESA RIVIA",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-357",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-347",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-350",
+  "cliente": "Luis Miguel Gómez Cruz",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-349",
+  "cliente": "Diego Cortés Ponce",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-345",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-352",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-342",
+  "cliente": "MP PACIFICO SL",
+  "base": 35.76,
+  "total": 43.27,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-05-01",
+  "numero": "LYM-351",
+  "cliente": "LANIAKEA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-29",
+  "numero": "LYM-437",
+  "cliente": "Olivossanfernando2026s.l.",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-06-27",
+  "numero": "LYM-436",
+  "cliente": "Hugo Barrero Miranda",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-26",
+  "numero": "LYM-435",
+  "cliente": "Casa Francisco raul , s.l.",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-26",
+  "numero": "LYM-434",
+  "cliente": "BAKERY AND COFFEE MADRID SL",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-24",
+  "numero": "LYM-433",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-24",
+  "numero": "LYM-432",
+  "cliente": "Maria Teresa Aviles Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-23",
+  "numero": "LYM-430",
+  "cliente": "Cafés de Carla SL",
+  "base": 250,
+  "total": 250,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-06-23",
+  "numero": "LYM-431",
+  "cliente": "LA TAPERIA DEL LULU SL, sociedad limitada",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-06-22",
+  "numero": "LYM-427",
+  "cliente": "Albert Plata Lopez de las Huertas",
+  "base": 49,
+  "total": 59.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-19",
+  "numero": "LYM-426",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-18",
+  "numero": "LYM-425",
+  "cliente": "CLUB BILLAR CARTAGENA S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-17",
+  "numero": "LYM-420",
+  "cliente": "ARTESANOS BUENDIA CANO, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-17",
+  "numero": "LYM-421",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-17",
+  "numero": "LYM-422",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-17",
+  "numero": "LYM-419",
+  "cliente": "ARTESANOS BUENDIA CANO, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-17",
+  "numero": "LYM-424",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-17",
+  "numero": "LYM-423",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-15",
+  "numero": "LYM-417",
+  "cliente": "LUIS MIGUEL PASTELERÍAS SL",
+  "base": 199,
+  "total": 240.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-15",
+  "numero": "LYM-418",
+  "cliente": "Mario Marin Soler",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-10",
+  "numero": "LYM-416",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-08",
+  "numero": "LYM-414",
+  "cliente": "FABRICA DE PAN SAN ANTONIO, S.L.",
+  "base": 40,
+  "total": 48.4,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-08",
+  "numero": "LYM-415",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 110,
+  "total": 133.1,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-07",
+  "numero": "LYM-413",
+  "cliente": "FABRICA DE PAN SAN ANTONIO, S.L.",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-06",
+  "numero": "LYM-412",
+  "cliente": "Marta García Gómez",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-03",
+  "numero": "LYM-411",
+  "cliente": "Casa Francisco raul , s.l.",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-06-02",
+  "numero": "LYM-410",
+  "cliente": "Diego Navarro Handal",
+  "base": 89.1,
+  "total": 107.81,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-386",
+  "cliente": "CARAI MELILLA SL",
+  "base": 119.2,
+  "total": 119.2,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-383",
+  "cliente": "PIANISTA NICOLAU SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-393",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-409",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-388",
+  "cliente": "MP PACIFICO SL",
+  "base": 35.76,
+  "total": 43.27,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-408",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 120,
+  "total": 145.2,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-405",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 199,
+  "total": 240.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-400",
+  "cliente": "Enric Gil I Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-396",
+  "cliente": "Luis Miguel Gómez Cruz",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-402",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-404",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-406",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 282.46,
+  "total": 341.77,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-403",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-385",
+  "cliente": "LA FLASH MURCIA SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-395",
+  "cliente": "Diego Cortés Ponce",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-394",
+  "cliente": "GUIJAMA 1998 SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-398",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-391",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-387",
+  "cliente": "ENRED SC",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-392",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 199,
+  "total": 240.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-399",
+  "cliente": "Jose Tomas Navarro Alcazar",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-397",
+  "cliente": "LANIAKEA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-407",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-390",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-384",
+  "cliente": "Roberto García 2017 SLU",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-389",
+  "cliente": "CARETTA BEACH SL",
+  "base": 35,
+  "total": 35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-06-01",
+  "numero": "LYM-401",
+  "cliente": "ASOCIACIÓN ESTUDIANTIL JUNIOR EMPRESA RIVIA",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-30",
+  "numero": "LYM-496",
+  "cliente": "Madrid & Ros restauracion SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-28",
+  "numero": "LYM-495",
+  "cliente": "Tokenbit SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-27",
+  "numero": "LYM-494",
+  "cliente": "ALCABO MONTELEVA SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-27",
+  "numero": "LYM-493",
+  "cliente": "Hugo Barrero Miranda",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-26",
+  "numero": "LYM-492",
+  "cliente": "Casa Francisco raul , s.l.",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-26",
+  "numero": "LYM-491",
+  "cliente": "BAKERY AND COFFEE MADRID SL",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-24",
+  "numero": "LYM-487",
+  "cliente": "Maria Teresa Aviles Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-24",
+  "numero": "LYM-489",
+  "cliente": "FABRICA DE PAN SAN ANTONIO, S.L.",
+  "base": 95.7,
+  "total": 115.8,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-490",
+  "cliente": "Praliné foods & bakery SL",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-07-24",
+  "numero": "LYM-488",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-22",
+  "numero": "LYM-485",
+  "cliente": "FABRICA DE PAN SAN ANTONIO, S.L.",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-22",
+  "numero": "LYM-484",
+  "cliente": "Albert Plata Lopez de las Huertas",
+  "base": 49,
+  "total": 59.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-22",
+  "numero": "LYM-486",
+  "cliente": "LA TAPERIA DEL LULU SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-19",
+  "numero": "LYM-483",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-18",
+  "numero": "LYM-482",
+  "cliente": "CLUB BILLAR CARTAGENA S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-17",
+  "numero": "LYM-481",
+  "cliente": "Tokenbit SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-16",
+  "numero": "LYM-480",
+  "cliente": "CARAI MELILLA SL",
+  "base": 149,
+  "total": 149,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-15",
+  "numero": "LYM-479",
+  "cliente": "BAKERY AND COFFEE RETIRO SL",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-15",
+  "numero": "LYM-477",
+  "cliente": "LUIS MIGUEL PASTELERÍAS SL",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-15",
+  "numero": "LYM-477",
+  "cliente": "LUIS MIGUEL PASTELERÍAS SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-15",
+  "numero": "LYM-478",
+  "cliente": "Mario Marin Soler",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-14",
+  "numero": "LYM-476",
+  "cliente": "Madrid & Ros restauracion SL",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-07-10",
+  "numero": "LYM-475",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-09",
+  "numero": "LYM-474",
+  "cliente": "BAR MADRE DE DIOS SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-08",
+  "numero": "LYM-473",
+  "cliente": "LA TAPERIA DEL LULU SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-06",
+  "numero": "LYM-472",
+  "cliente": "Marta García Gómez",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-02",
+  "numero": "LYM-471",
+  "cliente": "CARAI MELILLA SL",
+  "base": 74.5,
+  "total": 74.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-02",
+  "numero": "LYM-470",
+  "cliente": "MP PACIFICO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-02",
+  "numero": "LYM-469",
+  "cliente": "Diego Navarro Handal",
+  "base": 89.1,
+  "total": 107.81,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-465",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-459",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-459",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-452",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-439",
+  "cliente": "PIANISTA NICOLAU SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-441",
+  "cliente": "LA FLASH MURCIA SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-456",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-443",
+  "cliente": "CARETTA BEACH SL",
+  "base": 35,
+  "total": 35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-457",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-442",
+  "cliente": "ENRED SC",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-440",
+  "cliente": "Roberto García 2017 SLU",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-464",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-450",
+  "cliente": "Luis Miguel Gómez Cruz",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-462",
+  "cliente": "ARTESANOS BUENDIA CANO, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-451",
+  "cliente": "LANIAKEA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-438",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 211.49,
+  "total": 255.9,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-438",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 70.97,
+  "total": 85.88,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-454",
+  "cliente": "Enric Gil I Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-466",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": -50,
+  "total": -60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-444",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-449",
+  "cliente": "Diego Cortés Ponce",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-460",
+  "cliente": "ARTESANOS BUENDIA CANO, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-446",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-446",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-445",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-448",
+  "cliente": "GUIJAMA 1998 SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-447",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-467",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 21,
+  "total": 25.41,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-467",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-453",
+  "cliente": "Jose Tomas Navarro Alcazar",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-458",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-458",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-463",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-461",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-455",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-07-01",
+  "numero": "LYM-468",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-30",
+  "numero": "LYM-557",
+  "cliente": "Madrid & Ros restauracion SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-28",
+  "numero": "LYM-555",
+  "cliente": "Tokenbit SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-28",
+  "numero": "LYM-556",
+  "cliente": "ALCABO MONTELEVA SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-27",
+  "numero": "LYM-554",
+  "cliente": "Hugo Barrero Miranda",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-26",
+  "numero": "LYM-553",
+  "cliente": "Casa Francisco raul , s.l.",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-26",
+  "numero": "LYM-552",
+  "cliente": "BAKERY AND COFFEE MADRID SL",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-25",
+  "numero": "LYM-551",
+  "cliente": "HOSTELFERCAR SL",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-08-24",
+  "numero": "LYM-550",
+  "cliente": "Alfonso Gálvez Guillamon",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-24",
+  "numero": "LYM-549",
+  "cliente": "Maria Teresa Aviles Garcia",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-22",
+  "numero": "LYM-547",
+  "cliente": "FABRICA DE PAN SAN ANTONIO, S.L.",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-22",
+  "numero": "LYM-546",
+  "cliente": "FABRICA DE PAN SAN ANTONIO, S.L.",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-22",
+  "numero": "LYM-545",
+  "cliente": "Albert Plata Lopez de las Huertas",
+  "base": 49,
+  "total": 59.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-22",
+  "numero": "LYM-548",
+  "cliente": "LA TAPERIA DEL LULU SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-20",
+  "numero": "LYM-544",
+  "cliente": "PIANISTA NICOLAU SL",
+  "base": -79,
+  "total": -95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-19",
+  "numero": "LYM-543",
+  "cliente": "BAR MADRE DE DIOS SL",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-08-19",
+  "numero": "LYM-542",
+  "cliente": "María del Carmen Gonzalo Pardo",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-18",
+  "numero": "LYM-541",
+  "cliente": "CLUB BILLAR CARTAGENA S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-17",
+  "numero": "LYM-540",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": 49,
+  "total": 59.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-17",
+  "numero": "LYM-540",
+  "cliente": "INVERSIONES JARAMILLO FERNÁNDEZ SL",
+  "base": 21,
+  "total": 25.41,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-15",
+  "numero": "LYM-539",
+  "cliente": "Mario Marin Soler",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-15",
+  "numero": "LYM-538",
+  "cliente": "LUIS MIGUEL PASTELERÍAS SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-15",
+  "numero": "LYM-538",
+  "cliente": "LUIS MIGUEL PASTELERÍAS SL",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-14",
+  "numero": "LYM-537",
+  "cliente": "BAKERY AND COFFEE RETIRO SL",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-13",
+  "numero": "LYM-536",
+  "cliente": "Praliné Foods & Bakery SL",
+  "base": 21,
+  "total": 25.41,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-13",
+  "numero": "LYM-536",
+  "cliente": "Praliné Foods & Bakery SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-11",
+  "numero": "LYM-534",
+  "cliente": "Stanley Nathan Shanmugam",
+  "base": 250,
+  "total": 302.5,
+  "meses": 0
+ },
+ {
+  "fecha": "2026-08-11",
+  "numero": "LYM-535",
+  "cliente": "SAO MEDIALUNAS DIAGONAL SL",
+  "base": 200,
+  "total": 242,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-10",
+  "numero": "LYM-532",
+  "cliente": "MIRACEU HOSTELEROS SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-10",
+  "numero": "LYM-533",
+  "cliente": "Tokenbit SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-09",
+  "numero": "LYM-531",
+  "cliente": "BAR MADRE DE DIOS SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-08",
+  "numero": "LYM-530",
+  "cliente": "LA TAPERIA DEL LULU SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-06",
+  "numero": "LYM-529",
+  "cliente": "Marta García Gómez",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-04",
+  "numero": "LYM-528",
+  "cliente": "DULCE MILENIO, SL",
+  "base": 68.33,
+  "total": 82.68,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-04",
+  "numero": "LYM-528",
+  "cliente": "DULCE MILENIO, SL",
+  "base": 203.63,
+  "total": 246.39,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-03",
+  "numero": "LYM-527",
+  "cliente": "CERVECERIA TIRA LA CAÑA SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-02",
+  "numero": "LYM-526",
+  "cliente": "MP PACIFICO SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-02",
+  "numero": "LYM-525",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-02",
+  "numero": "LYM-525",
+  "cliente": "Rafael Ángel Tamarit",
+  "base": 21,
+  "total": 25.41,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-02",
+  "numero": "LYM-524",
+  "cliente": "Diego Navarro Handal",
+  "base": 89.1,
+  "total": 107.81,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-500",
+  "cliente": "LA FLASH MURCIA SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-517",
+  "cliente": "ARTESANOS BUENDIA CANO, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-503",
+  "cliente": "Maria Amparo Juan Palop",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-515",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-515",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-508",
+  "cliente": "Diego Cortés Ponce",
+  "base": 77.31,
+  "total": 93.55,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-505",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-505",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-497",
+  "cliente": "PIANISTA NICOLAU SL",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-521",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-520",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-510",
+  "cliente": "LANIAKEA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-516",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-516",
+  "cliente": "NUEVA COCINA MEDITERRÁNEA 2002, S.L.",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-522",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-502",
+  "cliente": "CARETTA BEACH SL",
+  "base": 35,
+  "total": 35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-518",
+  "cliente": "SNOOPY HELADERIAS, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-523",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-523",
+  "cliente": "THE VITAL COOKING SL",
+  "base": 149,
+  "total": 180.29,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-512",
+  "cliente": "Jose Tomas Navarro Alcazar",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-499",
+  "cliente": "REAL SOCIEDAD DE GOLF DE NEGURI",
+  "base": 79,
+  "total": 95.59,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-511",
+  "cliente": "PISTACHO Y CHOCOLATE SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-506",
+  "cliente": "NEGOCIOS HOSTELERIA EL PILAR SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-519",
+  "cliente": "ARTESANOS BUENDIA CANO, SL",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-514",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-504",
+  "cliente": "NUEVA TORRETA SL",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-501",
+  "cliente": "ENRED SC",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-509",
+  "cliente": "Luis Miguel Gómez Cruz",
+  "base": 50,
+  "total": 60.5,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-513",
+  "cliente": "Carlos Segura Quintana",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-498",
+  "cliente": "Roberto García 2017 SLU",
+  "base": 99,
+  "total": 119.79,
+  "meses": 1
+ },
+ {
+  "fecha": "2026-08-01",
+  "numero": "LYM-507",
+  "cliente": "GUIJAMA 1998 SL",
+  "base": 35,
+  "total": 42.35,
+  "meses": 1
+ }
+]

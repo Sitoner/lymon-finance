@@ -1,0 +1,29 @@
+{
+  "name": "lymon-finance",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node --env-file-if-exists=.env.local server/seed.js",
+    "migrar": "node --env-file-if-exists=.env.local --disable-warning=ExperimentalWarning scripts/migrar.js",
+    "check": "node scripts/check.js"
+  },
+  "dependencies": {
+    "jose": "^6.2.13",
+    "next": "^16.4.3",
+    "pg": "^8.23.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "recharts": "^3.10.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.11"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

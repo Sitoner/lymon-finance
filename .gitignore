@@ -1,0 +1,8 @@
+node_modules
+.next
+next-env.d.ts
+.vercel
+data/*.db*
+data/pglite
+.env*
+!.env.example

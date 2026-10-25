@@ -1,0 +1,4 @@
+# Datos financieros: no se suben a Vercel (la app lee de Postgres)
+data
+seed
+.env*

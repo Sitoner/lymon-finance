@@ -1,0 +1,2822 @@
+[
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-02",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -242,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-02",
+  "descripcion": "Dinero añadido por ANDRES FRANCISCO PASTOR TUDELA",
+  "importe": 193.75,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Impuestos y deuda",
+  "subgrupo": "IVA (declaraciones)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-02",
+  "descripcion": "Dinero añadido por ANDRES FRANCISCO PASTOR TUDELA",
+  "importe": 1000,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Impuestos y deuda",
+  "subgrupo": "IVA (declaraciones)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-02",
+  "descripcion": "Dinero añadido por ANDRES FRANCISCO PASTOR TUDELA",
+  "importe": 1000,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Impuestos y deuda",
+  "subgrupo": "IVA (declaraciones)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-02",
+  "descripcion": "Facebk *hwqwjbdgd2",
+  "importe": -14,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Meta Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-02",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -27.08,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-03",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -200,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-03",
+  "descripcion": "A José Antonio Aguilar Romero",
+  "importe": -200,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-03",
+  "descripcion": "A José Sánchez Hernández",
+  "importe": -200,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-03",
+  "descripcion": "A Pablo Aguilar Martinez",
+  "importe": -200,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-04",
+  "descripcion": "Lionza",
+  "importe": -120.5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-04",
+  "descripcion": "Facebk *ecdeqbdgd2",
+  "importe": -1.25,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Meta Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-04",
+  "descripcion": "Render.com",
+  "importe": -6.04,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Infraestructura"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-04",
+  "descripcion": "Facebk *9gzcz99gd2",
+  "importe": -14,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Meta Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-07",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 1392.47,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-07",
+  "descripcion": "Anthropic",
+  "importe": -5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-08",
+  "descripcion": "Anthropic",
+  "importe": -5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-09",
+  "descripcion": "Dinero añadido por ENRED SCP",
+  "importe": 4.92,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-14",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 41.73,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-20",
+  "descripcion": "Agencia Tributaria (AEAT)",
+  "importe": -2193.75,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Impuestos y deuda",
+  "subgrupo": "IVA (declaraciones)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-22",
+  "descripcion": "A Stylo Publicidad",
+  "importe": -47.67,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Generación QR"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-25",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -18,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-27",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS SL",
+  "importe": 262.73,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-28",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-29",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -242,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-01-29",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -17,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-01",
+  "descripcion": "Otomatico",
+  "importe": -544.5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Otomatico"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-01",
+  "descripcion": "Dinero añadido por ALVARO ALEJANDRE SALVADOR",
+  "importe": 181.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Puesta en marcha"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-02",
+  "descripcion": "A Stylo Publicidad",
+  "importe": -42.35,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Generación QR"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-02",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -28.75,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-02",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 22.79,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-02",
+  "descripcion": "A Tíckalo Sistemas SL",
+  "importe": -121,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-04",
+  "descripcion": "Render.com",
+  "importe": -5.93,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Infraestructura"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-05",
+  "descripcion": "A CAFE MAYDAY, S L",
+  "importe": -60.42,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-05",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 1800.3,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-09",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -1218.89,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-09",
+  "descripcion": "Dinero añadido por ENRED SC",
+  "importe": 6.17,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-09",
+  "descripcion": "Dinero añadido por ENRIC GIL GARCIA",
+  "importe": 60.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Puesta en marcha"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-10",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -18,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-11",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -72.7,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-11",
+  "descripcion": "Dinero añadido por ADRIAN PEREZ CARRILLO",
+  "importe": 181.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Puesta en marcha"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-11",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 179.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Puesta en marcha"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-12",
+  "descripcion": "Canva* I04790-25605798",
+  "importe": -12,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Canva"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-12",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 41.73,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-15",
+  "descripcion": "Reembolso de Otomatico",
+  "importe": 108.9,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-18",
+  "descripcion": "Www.onlineprinters.es",
+  "importe": -28.92,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Follectos publicitarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-21",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -87.35,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-25",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS SL",
+  "importe": 292.01,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-26",
+  "descripcion": "Palmar, El O Lugar De",
+  "importe": -42.8,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-26",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -17,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-28",
+  "descripcion": "A Stylo Publicidad",
+  "importe": -598.95,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Folletos publicitarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-02-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-01",
+  "descripcion": "Otomatico",
+  "importe": -980.1,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Otomatico"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-02",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -242,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-02",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -28.75,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-04",
+  "descripcion": "Render.com",
+  "importe": -8.72,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Infraestructura"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-05",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 1801.49,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-06",
+  "descripcion": "Odoo Erp Sp S.l.",
+  "importe": -17.91,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-06",
+  "descripcion": "Dinero añadido por ENRED SCP",
+  "importe": 12.67,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-11",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-11",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -1266.93,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-11",
+  "descripcion": "Dinero añadido por RAFAEL ANGEL TAMARIT",
+  "importe": 68.76,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-12",
+  "descripcion": "Canva* I04818-24018114",
+  "importe": -12,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Canva"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-12",
+  "descripcion": "Reembolso de Otomatico",
+  "importe": 544.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-12",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 28.48,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-13",
+  "descripcion": "Hostinger* Hostinger.e",
+  "importe": -9.99,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Hosting"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-16",
+  "descripcion": "A Antonio José Matas Garrido",
+  "importe": -360,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Folletos publicitarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-16",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -300,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-16",
+  "descripcion": "A Pablo Aguilar Martinez",
+  "importe": -300,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-16",
+  "descripcion": "A José Sánchez Hernández",
+  "importe": -300,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-16",
+  "descripcion": "A José Antonio Aguilar Romero",
+  "importe": -300,
+  "divisa": "EUR",
+  "tipo": "Otros cobros/pagos",
+  "grupo": "Inversión Externa",
+  "subgrupo": "Repago a socios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-16",
+  "descripcion": "Dinero añadido por INSTITUTO DE FOMENTO DE LA REGION DE MURCIA",
+  "importe": 2527.94,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-18",
+  "descripcion": "A NECOMPLUS S.L.",
+  "importe": -556.58,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-18",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 438,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Datáfono"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-19",
+  "descripcion": "Outscraper",
+  "importe": -8.72,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Outscraper"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-19",
+  "descripcion": "Calendly",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Calendly"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-20",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 179.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-21",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-23",
+  "descripcion": "Dinero añadido por REAL SDAD. DE GOLF DE NEGURI",
+  "importe": 181.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Puesta en marcha"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-24",
+  "descripcion": "Dinero añadido por MP PACIFICO, S.L.",
+  "importe": 13.25,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-25",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS SL",
+  "importe": 318.43,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-30",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -17.15,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-30",
+  "descripcion": "Google*ads3378811599",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-03-31",
+  "descripcion": "Beel.es",
+  "importe": -19.9,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-29",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -16.99,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-27",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS SL",
+  "importe": 428.3,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-22",
+  "descripcion": "Crisp",
+  "importe": -17.57,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-21",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-20",
+  "descripcion": "Agencia Tributaria (AEAT)",
+  "importe": -581.24,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Tributos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-20",
+  "descripcion": "Agencia Tributaria (AEAT)",
+  "importe": -155.63,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Tributos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-19",
+  "descripcion": "Calendly",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Calendly"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-16",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -5.57,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-14",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 41.73,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-12",
+  "descripcion": "Canva* I04849-15949585",
+  "importe": -12,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Canva"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-11",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-10",
+  "descripcion": "Dinero añadido por MP PACIFICO, S.L.",
+  "importe": 20.57,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-10",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 359,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-09",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -3.69,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-09",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 1252.89,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-09",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -1385.74,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-08",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -242,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-08",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 578.79,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-06",
+  "descripcion": "Google*ads3378811599",
+  "importe": -50,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-04",
+  "descripcion": "Dinero añadido por CARAI MELILLA S.L.",
+  "importe": 440,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-02",
+  "descripcion": "A Stylo Publicidad",
+  "importe": -20.33,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Generación QR"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-02",
+  "descripcion": "Google*ads3378811599",
+  "importe": -20.42,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-02",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -28.75,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-02",
+  "descripcion": "Dinero añadido por DEVOLUCIONES TRIBUTARIAS, AGENCIA ESTATAL DE ADMINISTRACION TRIBUTARIA",
+  "importe": 1166.86,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-01",
+  "descripcion": "Otomatico",
+  "importe": -435.6,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Otomatico"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-04-30",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -4.45,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-30",
+  "descripcion": "Beel.",
+  "importe": -24.08,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-27",
+  "descripcion": "Reembolso de Zadarma",
+  "importe": 6.05,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-29",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 366.66,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-27",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -17,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-26",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -8.4,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-27",
+  "descripcion": "Zadarma",
+  "importe": -6.05,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-27",
+  "descripcion": "Pipedrive Ou",
+  "importe": -49,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "CRM"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-27",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 119.38,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-26",
+  "descripcion": "Zadarma",
+  "importe": -6.05,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-26",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-22",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS SL",
+  "importe": 319.99,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-22",
+  "descripcion": "A AKTION LEGAL PARTNERS, S.L.P.",
+  "importe": -544.5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-22",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 444.42,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-21",
+  "descripcion": "Dinero añadido por LYMON APP S.L.",
+  "importe": 223.85,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-21",
+  "descripcion": "A Viladomat Ofimàtica S.L.",
+  "importe": -121,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-19",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -1.59,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-20",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-20",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 299.29,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-18",
+  "descripcion": "Calendly",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Calendly"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-17",
+  "descripcion": "Dinero añadido por ENRED SC",
+  "importe": 8.01,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-15",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 134.36,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-13",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 41.73,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-12",
+  "descripcion": "Rapid Centro Color",
+  "importe": -78.65,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Generación QR"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-12",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -242,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-12",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-11",
+  "descripcion": "Dinero añadido por MARIO GUERRA RUBIO",
+  "importe": 16.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-10",
+  "descripcion": "Claude.ai Subscription",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-08",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 698.45,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-07",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 1337.24,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-07",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -10.55,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-06",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 566.98,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-05",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -1559.54,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-04",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 927.78,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-03",
+  "descripcion": "Crisp",
+  "importe": -85.81,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-04",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 974.61,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-01",
+  "descripcion": "Google*ads3378811599",
+  "importe": -55.84,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-05-01",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -29.1,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-30",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 240,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-29",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -17.24,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-27",
+  "descripcion": "Pipedrive Ou",
+  "importe": -49,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "CRM"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-26",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-26",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 796.1,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-25",
+  "descripcion": "Google*ads3378811599",
+  "importe": -200,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-25",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -2.02,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-25",
+  "descripcion": "Reembolso de Lymon App Sl",
+  "importe": 1.2,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-25",
+  "descripcion": "Reembolso de Lymon App Sl",
+  "importe": 1.2,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-25",
+  "descripcion": "Reembolso de Lymon App Sl",
+  "importe": 1.2,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-24",
+  "descripcion": "Lymon App Sl",
+  "importe": -1.2,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-24",
+  "descripcion": "Lymon App Sl",
+  "importe": -1.2,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-24",
+  "descripcion": "Lymon App Sl",
+  "importe": -1.2,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-23",
+  "descripcion": "Pccomponentes",
+  "importe": -879,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Ordenadores"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-23",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 714.74,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-22",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-22",
+  "descripcion": "A Viladomat Ofimàtica S.L.",
+  "importe": -35.57,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-21",
+  "descripcion": "Anthropic* Claude Sub",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-19",
+  "descripcion": "Canva* I04917-35382508",
+  "importe": -17,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Canva"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-19",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-19",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -2.14,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-19",
+  "descripcion": "Calendly",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Calendly"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-17",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 238.79,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-17",
+  "descripcion": "Rapid Centro Color, S.l.",
+  "importe": -187.55,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Generación QR"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-15",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 94.43,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-15",
+  "descripcion": "Google*ads3378811599",
+  "importe": -100,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-12",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 89.45,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-12",
+  "descripcion": "Zadarma",
+  "importe": -24.2,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-12",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 350.46,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-11",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -13.9,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-11",
+  "descripcion": "Anthropic* Claude Sub",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-10",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-09",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-09",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -133.1,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-05",
+  "descripcion": "Dinero añadido por BAR MADRE DE DIOS S. L.",
+  "importe": 60.5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-05",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 261.94,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-05",
+  "descripcion": "Crisp",
+  "importe": -105,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-05",
+  "descripcion": "Media Markt Online",
+  "importe": -849,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Ordenadores"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-05",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 1246.98,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-04",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -4.98,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-04",
+  "descripcion": "A NECOMPLUS S.L.",
+  "importe": -12.09,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Integraciones"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-04",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 1066.96,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-03",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 1599.12,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-02",
+  "descripcion": "A KPT, S.L.",
+  "importe": -145.2,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Otomatico"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-02",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -34,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-06-01",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -2280,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-31",
+  "descripcion": "Manresa Meseguer, S.l.",
+  "importe": -242,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-31",
+  "descripcion": "A SHOFTORE S.L.",
+  "importe": -100,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-31",
+  "descripcion": "A CONIL INFORMATICA SL",
+  "importe": -363,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-31",
+  "descripcion": "A GLOVOAPP SPAIN PLATFORM SL",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Integraciones"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-31",
+  "descripcion": "Beel.",
+  "importe": -22.99,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-31",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 643.94,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-30",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -17.48,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-30",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 114.44,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-30",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -5.43,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-29",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 240,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-28",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-27",
+  "descripcion": "Pipedrive Ou",
+  "importe": -49,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "CRM"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-24",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 118.39,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-24",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 547.74,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-23",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -7.88,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-22",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-21",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 240,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-21",
+  "descripcion": "Anthropic* Claude Sub",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-20",
+  "descripcion": "Agencia Tributaria (AEAT)",
+  "importe": -320.85,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Tributos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-20",
+  "descripcion": "Agencia Tributaria (AEAT)",
+  "importe": -886.71,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Tributos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-19",
+  "descripcion": "Canva* I04947-12549109",
+  "importe": -17,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Canva"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-19",
+  "descripcion": "Calendly",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Calendly"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-17",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 298.48,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-17",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 420.78,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-16",
+  "descripcion": "Jumper Soluciones Informaticas, Sl",
+  "importe": -121,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-16",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -3.34,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-15",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 41.73,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-15",
+  "descripcion": "A GLOVOAPP SPAIN PLATFORM SL",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Integraciones"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-15",
+  "descripcion": "Reembolso de Lymon App Sl",
+  "importe": 5,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Cobros atípicos",
+  "subgrupo": "Otros cobros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-14",
+  "descripcion": "A Maria Dolores Villar Cervilla",
+  "importe": -106,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-14",
+  "descripcion": "Lymon App Sl",
+  "importe": -5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Otros gastos"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-11",
+  "descripcion": "Anthropic* Claude Sub",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-10",
+  "descripcion": "Slack T0b9krt21gv",
+  "importe": -16.5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-10",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 421.27,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-09",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -13.09,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-08",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-07",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -242,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-06",
+  "descripcion": "A GRUPO ALINVENTOR DESARROLLO ESTRATEGICO SLU",
+  "importe": -659.58,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Puesta en marcha"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-06",
+  "descripcion": "Crisp",
+  "importe": -105,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-03",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 2470.75,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-03",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 1140.11,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-02",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -11.18,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-02",
+  "descripcion": "Google*ads3378811599",
+  "importe": -65.37,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-02",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -38.08,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-01",
+  "descripcion": "A Andrés Pastor",
+  "importe": -2280,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-07-01",
+  "descripcion": "Beel.",
+  "importe": -24.08,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-31",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -6.53,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-30",
+  "descripcion": "Beel.",
+  "importe": -22.99,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-30",
+  "descripcion": "Google Cloud Kp9z4d",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-28",
+  "descripcion": "Comisión de Revolut Business",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-28",
+  "descripcion": "Digi Spain Telecom Sa",
+  "importe": -17.16,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Suministros"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-28",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 240,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-28",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 708.46,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-27",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -7.62,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-27",
+  "descripcion": "Manresa Meseguer, S.l.",
+  "importe": -121,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Comisión distribuidor/consultoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-27",
+  "descripcion": "Pipedrive Ou",
+  "importe": -49,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "CRM"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-26",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 297.27,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-20",
+  "descripcion": "Anthropic* Claude Sub",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-21",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 653.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-20",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-19",
+  "descripcion": "Canva* I04978-20991920",
+  "importe": -17,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Canva"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-19",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 625.55,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-18",
+  "descripcion": "Calendly",
+  "importe": -14.52,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Calendly"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-18",
+  "descripcion": "Google Cloud D9whxl",
+  "importe": -10,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-18",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 240,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-17",
+  "descripcion": "Zadarma",
+  "importe": -6.05,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-17",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 240,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-14",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 694.55,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-12",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 40.57,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-10",
+  "descripcion": "Anthropic* Claude Sub",
+  "importe": -90,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "IA"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-10",
+  "descripcion": "Slack T0b9krt21gv",
+  "importe": -16.5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-10",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 59.69,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-07",
+  "descripcion": "A ASESORIA MACANAS-SABATER, S.L.",
+  "importe": -498.5,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Servicios Asesoría y Gestoría"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-07",
+  "descripcion": "Dinero añadido por MONEI DIGITAL PAYMENTS S.L.",
+  "importe": 1042.49,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-06",
+  "descripcion": "Monei Digital Payments Sl",
+  "importe": -12.93,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Comisiones y servicios bancarios"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-06",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 94.43,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-05",
+  "descripcion": "Crisp",
+  "importe": -105,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Soporte"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-05",
+  "descripcion": "Dinero añadido por GOCARDLESS SAS",
+  "importe": 2306.89,
+  "divisa": "EUR",
+  "tipo": "Cobros",
+  "grupo": "Ventas",
+  "subgrupo": "Suscripción"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-04",
+  "descripcion": "A Patricia Gallego Ferrándiz",
+  "importe": -1692.73,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-04",
+  "descripcion": "A Andrés Francisco Pastor Tudela",
+  "importe": -2280,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Personal",
+  "subgrupo": "Honorarios socios (factura)"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-04",
+  "descripcion": "A GRUPO ALINVENTOR DESARROLLO ESTRATEGICO SLU",
+  "importe": -879.44,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Producción",
+  "subgrupo": "Puesta en marcha"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-01",
+  "descripcion": "Google*ads3378811599",
+  "importe": -258.17,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Marketing",
+  "subgrupo": "Google Ads"
+ },
+ {
+  "banco": "Revolut",
+  "fecha": "2026-08-01",
+  "descripcion": "Google Workspace_lymon",
+  "importe": -47.6,
+  "divisa": "EUR",
+  "tipo": "Pagos",
+  "grupo": "Generales",
+  "subgrupo": "Licencias de software"
+ }
+]
