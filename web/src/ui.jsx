@@ -103,7 +103,6 @@ export function SelectorCategoria({ cats, valor, onChange, vacio = 'Sin categor�
 function PanelCategorias({ cats, actual, importe, ancla, onCerrar, onElegir }) {
   const [texto, setTexto] = useState('');
   const [todas, setTodas] = useState(false);
-  const [activo, setActivo] = useState(0);
   const [pos, setPos] = useState(null);
   const caja = useRef(null), lista = useRef(null), buscador = useRef(null);
 
@@ -125,7 +124,11 @@ function PanelCategorias({ cats, actual, importe, ancla, onCerrar, onElegir }) {
   }
   const planas = secciones.flatMap((s) => s.items);
   const opciones = actual ? [...planas, null] : planas; // null = quitar la categoría
-  useEffect(() => { setActivo(0); }, [texto, todas]);
+  // Al abrir, la lista se coloca en la categoría que ya tiene (en su grupo, no en Recientes); al buscar, en la primera
+  const indiceActual = actual ? planas.findLastIndex((c) => claveCat(c) === claveCat(actual)) : -1;
+  const [activo, setActivo] = useState(Math.max(0, indiceActual));
+  const recienAbierto = useRef(true), busqueda = useRef(`${texto}|${todas}`);
+  useEffect(() => { const b = `${texto}|${todas}`; if (b !== busqueda.current) { busqueda.current = b; setActivo(0); } }, [texto, todas]);
 
   // Posición: debajo del botón (o encima si no cabe); en móvil, hoja pegada abajo
   useLayoutEffect(() => {
@@ -152,9 +155,10 @@ function PanelCategorias({ cats, actual, importe, ancla, onCerrar, onElegir }) {
   useEffect(() => {
     const l = lista.current, op = l?.querySelector('.catpop-op.on');
     if (!op) return;
+    if (recienAbierto.current) { recienAbierto.current = false; l.scrollTop = op.offsetTop - l.clientHeight / 2 + op.offsetHeight / 2; return; } // centrada al abrir
     if (op.offsetTop < l.scrollTop) l.scrollTop = op.offsetTop - 28;
     else if (op.offsetTop + op.offsetHeight > l.scrollTop + l.clientHeight) l.scrollTop = op.offsetTop + op.offsetHeight - l.clientHeight + 6;
-  }, [activo]);
+  }, [activo, !pos]); // eslint-disable-line
 
   const teclas = (e) => {
     if (e.key === 'ArrowDown') { e.preventDefault(); setActivo((a) => Math.min(opciones.length - 1, a + 1)); }
