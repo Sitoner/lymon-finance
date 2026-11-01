@@ -24,12 +24,17 @@ function fechaISO(v) {
   return null;
 }
 
-function leerHoja(buffer, nombre) {
+// Si se indica `columna`, usa la primera hoja cuya cabecera la contenga (p. ej. Beel exporta "Facturas" + "Items")
+function leerHoja(buffer, nombre, columna) {
   const esCsv = /\.csv$/i.test(nombre || '');
   const wb = esCsv
     ? XLSX.read(buffer.toString('utf8').replace(/^﻿/, ''), { type: 'string', raw: true })
     : XLSX.read(buffer, { type: 'buffer', cellDates: true });
-  return XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { raw: true, defval: null });
+  const hoja = (columna && wb.SheetNames.find((n) => {
+    const cabecera = XLSX.utils.sheet_to_json(wb.Sheets[n], { header: 1 })[0] || [];
+    return cabecera.some((c) => String(c).trim() === columna);
+  })) || wb.SheetNames[0];
+  return XLSX.utils.sheet_to_json(wb.Sheets[hoja], { raw: true, defval: null });
 }
 
 // ---------- categorización automática ----------
@@ -173,7 +178,7 @@ export function clasificarConcepto(concepto) {
 }
 
 export async function parsearBeel(buffer, nombre) {
-  const filas = leerHoja(buffer, nombre);
+  const filas = leerHoja(buffer, nombre, 'Num Factura');
   if (!filas.length || !('Num Factura' in filas[0])) throw new Error('No parece un export de facturas de Beel (falta la columna "Num Factura").');
   const existentes = await q('SELECT numero, linea, concepto, base, origen FROM facturas');
   const numerosExcel = new Set(existentes.filter((e) => e.origen === 'excel').map((e) => e.numero));
