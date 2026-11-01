@@ -215,44 +215,47 @@ function Control({ label, valor, min, max, paso, onChange, formato, ayuda }) {
   );
 }
 
-const conIvaDe = (g) => ((Number(g.coste) || 0) * (100 + (Number(g.iva) || 0) - (Number(g.irpf) || 0))) / 100;
+// Importe del movimiento (lo que sale del banco: con IVA y sin la retención) y coste sin IVA de una línea de gasto
+const factorBanco = (g) => (100 + (Number(g.iva) || 0) - (Number(g.irpf) || 0)) / 100;
+const bancoDe = (g) => (g.importe != null ? Number(g.importe) || 0 : (Number(g.coste) || 0) * factorBanco(g));
+const conImporte = (g, importe) => ({ importe, coste: importe / factorBanco(g) });
 
-// Gasto previsto al mes, por departamento y sin IVA. Cada línea es un concepto de pago elegido de la lista (o uno a mano);
-// su IVA real va por dentro y solo sirve para calcular la caja. En Personal van además los socios
+// Gasto previsto al mes, por departamento, con el importe de cada pago tal cual sale del banco. Cada línea es un concepto
+// de pago elegido de la lista (o uno a mano); su IVA real va por dentro para sacar el coste sin IVA y el margen.
+// En Personal van además los socios, con su coste acordado
 function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, primero }) {
   const [abiertos, setAbiertos] = useState({});
   const [eligiendo, setEligiendo] = useState(null); // departamento con la lista de pagos abierta
   const [buscar, setBuscar] = useState('');
   const actualizar = (id, cambios) => onGastos(gastos.map((g) => (g.id === id ? { ...g, ...cambios } : g)));
-  const anadir = (grupo) => onGastos([...gastos, { id: Date.now().toString(36), grupo, nombre: '', subgrupo: '', coste: 0, iva: 21, irpf: 0, nuevo: true }]);
+  const anadir = (grupo) => onGastos([...gastos, { id: Date.now().toString(36), grupo, nombre: '', subgrupo: '', importe: 0, coste: 0, iva: 21, irpf: 0, nuevo: true }]);
   const elegidos = new Set(gastos.map((g) => g.clave).filter(Boolean));
   const alternar = (t) => (elegidos.has(t.clave)
     ? onGastos(gastos.filter((g) => g.clave !== t.clave))
-    : onGastos([...gastos, { id: t.clave, clave: t.clave, nombre: t.nombre, grupo: t.grupo, subgrupo: t.subgrupo, coste: t.coste, iva: t.iva, irpf: t.irpf }]));
+    : onGastos([...gastos, { id: t.clave, clave: t.clave, nombre: t.nombre, grupo: t.grupo, subgrupo: t.subgrupo, importe: t.importe, coste: t.coste, iva: t.iva, irpf: t.irpf }]));
   const deDep = (dep) => gastos.filter((g) => (DEPARTAMENTOS.includes(g.grupo) ? g.grupo : 'Generales') === dep);
   const suma = (lista) => lista.filter((g) => !g.desactivado).reduce((a, g) => a + (Number(g.coste) || 0), 0);
   const mesHoy = meses[0];
   const costeSocios = socios.filter((so) => socioActivo(so, mesHoy)).reduce((a, so) => a + pagoSocio(so).costeReal, 0);
   const total = suma(gastos) + costeSocios;
-  const sumaIva = (lista) => lista.filter((g) => !g.desactivado).reduce((a, g) => a + conIvaDe(g), 0);
+  const sumaBanco = (lista) => lista.filter((g) => !g.desactivado).reduce((a, g) => a + bancoDe(g), 0);
   const bancoSocios = socios.filter((so) => socioActivo(so, mesHoy)).reduce((a, so) => a + pagoSocio(so).banco, 0);
-  const totalIva = sumaIva(gastos) + bancoSocios;
+  const totalBanco = sumaBanco(gastos) + bancoSocios;
   const q = buscar.trim().toLowerCase();
 
   return (
     <div className="card">
       <div className="chart-title">
-        <h2 style={{ margin: 0 }}>Gasto previsto al mes <span className="muted" style={{ fontWeight: 500, fontSize: 14 }}>sin IVA</span></h2>
-        <span style={{ textAlign: 'right' }}><b style={{ fontSize: 20 }}>{fEur(total)}</b><span className="muted" style={{ display: 'block', fontSize: 12 }}>{fEur(totalIva)} con IVA</span></span>
+        <h2 style={{ margin: 0 }}>Gasto previsto al mes <span className="muted" style={{ fontWeight: 500, fontSize: 14 }}>lo que sale del banco</span></h2>
+        <span style={{ textAlign: 'right' }}><b style={{ fontSize: 20 }}>{fEur(totalBanco)}</b><span className="muted" style={{ display: 'block', fontSize: 12 }}>coste sin IVA {fEur(total)}</span></span>
       </div>
       <div className="kpi-foot" style={{ marginTop: -6, marginBottom: 6 }}>
-        Elige de la lista los pagos que se repiten y pon lo que esperas gastar en cada uno, sin IVA.
-        {primero && <> En {fMesLargo(primero.mes).toLowerCase()} saldrían del banco {fEur(primero.gastos)} con el IVA incluido.</>}
+        Elige de la lista los pagos que se repiten y pon lo que esperas pagar en cada uno, tal cual sale del banco. A los socios, su coste acordado: la app calcula lo que sale del banco.
       </div>
       {DEPARTAMENTOS.map((dep) => {
         const lineas = deDep(dep), esPersonal = dep === 'Personal';
         const sub = suma(lineas) + (esPersonal ? costeSocios : 0);
-        const subIva = sumaIva(lineas) + (esPersonal ? bancoSocios : 0);
+        const subBanco = sumaBanco(lineas) + (esPersonal ? bancoSocios : 0);
         const abierto = abiertos[dep] ?? esPersonal;
         const lista = conceptos.filter((t) => t.grupo === dep && (!q || `${t.nombre} ${t.subgrupo}`.toLowerCase().includes(q)));
         const resumen = esPersonal
@@ -267,7 +270,7 @@ function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, p
                 <b>{dep}</b>
                 <span className="muted" style={{ fontSize: 13 }}>{resumen}</span>
               </span>
-              <span className="row" style={{ gap: 10 }}><span className="muted" style={{ fontSize: 12 }}>{fEur(subIva)} con IVA</span><b>{fEur(sub)}</b><span className="muted">{abierto ? '▴' : '▾'}</span></span>
+              <span className="row" style={{ gap: 10 }}><span className="muted" style={{ fontSize: 12 }}>coste sin IVA {fEur(sub)}</span><b>{fEur(subBanco)}</b><span className="muted">{abierto ? '▴' : '▾'}</span></span>
             </button>
             {abierto && (
               <div style={{ padding: '0 0 10px 17px' }}>
@@ -282,9 +285,10 @@ function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, p
                           {g.nombre && g.subgrupo && <span className="muted" style={{ fontSize: 12 }}>{g.subgrupo}</span>}
                         </span>
                       )}
-                    <input type="number" step={10} min={0} value={g.coste} style={{ width: 100, textAlign: 'right' }} onChange={(e) => actualizar(g.id, { coste: Number(e.target.value) || 0 })} />
+                    <input type="number" step={1} min={0} value={Math.round(bancoDe(g) * 100) / 100} style={{ width: 100, textAlign: 'right' }} title="Lo que sale del banco cada mes"
+                      onChange={(e) => actualizar(g.id, conImporte(g, Number(e.target.value) || 0))} />
                     <span className="muted">€/mes</span>
-                    <span className="muted" style={{ fontSize: 12, minWidth: 92, textAlign: 'right' }}>{fEur(conIvaDe(g))} con IVA</span>
+                    <span className="muted" style={{ fontSize: 12, minWidth: 104, textAlign: 'right' }} title="Coste para la empresa, sin IVA">sin IVA {fEur(g.coste)}</span>
                     <button className="btn sm ghost" title="Quitar" onClick={() => onGastos(gastos.filter((x) => x.id !== g.id))}>✕</button>
                   </div>
                 ))}
@@ -308,7 +312,7 @@ function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, p
                           </span>
                           {t.meses >= 2 && <span className="badge" title="Pagado en varios de los últimos 3 meses">habitual</span>}
                           {!t.reciente && <span className="badge warn" title="No se ha pagado en los últimos 3 meses">sin pagos recientes</span>}
-                          <span style={{ fontVariantNumeric: 'tabular-nums', minWidth: 80, textAlign: 'right' }} title="Último pago, sin IVA">{fEur(t.coste)}</span>
+                          <span style={{ fontVariantNumeric: 'tabular-nums', minWidth: 80, textAlign: 'right' }} title="Último pago, tal cual salió del banco">{fEur(t.importe)}</span>
                         </label>
                       ))}
                       {!lista.length && <div className="empty" style={{ padding: 16 }}>{q ? `Nada con «${buscar}».` : 'No hay pagos de este departamento en el último año.'}</div>}
