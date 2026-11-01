@@ -149,13 +149,13 @@ ruta('GET', '/importaciones', () => q('SELECT * FROM importaciones ORDER BY id D
 // ---------- previsión ----------
 ruta('GET', '/prevision', () => prevision());
 
-// Supuestos del simulador: { restaurantes, nuevosMes, ticketMedio, precioPuestaMarcha, gastoMensual, horizonte, incluirHacienda, ajustes }
+// Supuestos del simulador: { restaurantes, nuevosMes, ticketMedio, precioPuestaMarcha, gastoMensual, horizonte, incluirHacienda, cajaMinima, ajustes, gastos, socios }
 ruta('PUT', '/prevision/config', async ({ body }) => {
   const actual = (await getAjuste('simulacion')) || {};
   const cambios = body?.supuestos || {};
-  const listas = ['ajustes', 'partidas']; // el resto son números (incluido «retraso»)
+  const listas = ['ajustes', 'partidas', 'socios', 'gastos']; // el resto son números (incluido «retraso»)
   const numeros = Object.fromEntries(Object.entries(cambios).filter(([k]) => !listas.includes(k)).map(([k, v]) => [k, Number(v) || 0]));
-  const nuevo = { ...actual, ...numeros, ...(Array.isArray(cambios.ajustes) && { ajustes: cambios.ajustes }), ...(Array.isArray(cambios.partidas) && { partidas: cambios.partidas }) };
+  const nuevo = { ...actual, ...numeros, ...Object.fromEntries(listas.filter((k) => Array.isArray(cambios[k])).map((k) => [k, cambios[k]])) };
   // Si el gasto está desglosado en partidas, el gasto mensual es su suma
   if (nuevo.partidas?.length) nuevo.gastoMensual = Math.round(nuevo.partidas.reduce((a, p) => a + (Number(p.importe) || 0), 0) * 100) / 100;
   await setAjuste('simulacion', nuevo);

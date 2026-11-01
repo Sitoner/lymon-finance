@@ -214,17 +214,54 @@ async function ivaReal() {
   return { rep, sop, ret, movs };
 }
 
-// % medios reales, para estimar el IVA y el IRPF que hay dentro de los importes previstos
+// Pagos a socios: en la previsión van aparte (cada socio con su coste y su forma de cobrar), no en el gasto general
+const esPagoSocio = (subgrupo) => /^(Honorarios socios|Salarios socios)/.test(subgrupo || '');
+
+// % medios reales del gasto general (sin socios), para estimar el IVA y el IRPF que hay dentro de los importes previstos
 async function tiposMedios(movs) {
   let base = 0, cuotaIva = 0, cuotaIrpf = 0;
   for (const m of movs) {
-    if (!GRUPOS_GASTO.includes(m.grupo) || m.subgrupo === 'IRPF') continue;
+    if (!GRUPOS_GASTO.includes(m.grupo) || m.subgrupo === 'IRPF' || esPagoSocio(m.subgrupo)) continue;
     const b = (-m.importe * 100) / (100 + m.iva - m.irpf);
     base += b; cuotaIva += (b * m.iva) / 100; cuotaIrpf += (b * m.irpf) / 100;
   }
   const fac = await one('SELECT SUM(base) b, SUM(COALESCE(total, base) - base) i FROM facturas WHERE base > 0');
   const pct = (x) => (base > 0 ? Math.round((x / base) * 1000) / 10 : 0);
   return { ivaVentas: fac.b ? Math.round((fac.i / fac.b) * 1000) / 10 : 21, ivaGastos: pct(cuotaIva), irpfGastos: pct(cuotaIrpf) };
+}
+
+// Concepto de un pago, para agrupar los que se repiten («Google Workspace_lymon 03» y «… 04» son el mismo)
+const claveConcepto = (d) => d.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\*.*$/, '').replace(/[0-9]+/g, '').replace(/[^a-z&]+/g, ' ').trim();
+
+// Gasto de partida para la previsión, de los 3 últimos meses reales (media al mes):
+// - gastos: una línea por categoría de gasto operativo, sin IVA, con su IVA e IRPF reales
+// - socios: lo pagado a cada uno, pasado a coste sin IVA según cómo cobra (factura: coste + 21 % − 7 %; nómina: coste − 19 %)
+async function gastoInicial(ultimoMesReal) {
+  const movs = await q(`SELECT m.descripcion, m.importe, m.grupo, m.subgrupo, COALESCE(m.iva, c.iva, 0) iva, COALESCE(m.irpf, c.irpf, 0) irpf
+    FROM movimientos m LEFT JOIN categorias c ON c.tipo = m.tipo AND c.grupo = m.grupo AND c.subgrupo = m.subgrupo
+    WHERE m.tipo = 'Pagos' AND m.importe < 0 AND m.fecha >= ? AND m.fecha < ?`, [sumarMeses(ultimoMesReal, -2) + '-01', sumarMeses(ultimoMesReal, 1) + '-01']);
+  const porCat = new Map(), porSocio = new Map();
+  for (const m of movs) {
+    if (esPagoSocio(m.subgrupo)) {
+      const k = claveConcepto(m.descripcion);
+      if (!porSocio.has(k)) porSocio.set(k, { nombre: m.descripcion.replace(/^A\s+/i, '').trim(), nomina: /^Salarios/.test(m.subgrupo), pagado: 0 });
+      porSocio.get(k).pagado -= m.importe;
+    } else if (GRUPOS_GASTO.includes(m.grupo) && m.subgrupo !== 'IRPF') {
+      const k = `${m.grupo}|${m.subgrupo}`;
+      if (!porCat.has(k)) porCat.set(k, { grupo: m.grupo, subgrupo: m.subgrupo, base: 0, iva: 0, irpf: 0 });
+      const c = porCat.get(k), b = (-m.importe * 100) / (100 + m.iva - m.irpf);
+      c.base += b; c.iva += (b * m.iva) / 100; c.irpf += (b * m.irpf) / 100;
+    }
+  }
+  const pct = (x, base) => (base ? Math.round((x / base) * 1000) / 10 : 0);
+  const gastos = [...porCat.values()].filter((c) => c.base / 3 >= 1)
+    .sort((a, b) => GRUPOS_GASTO.indexOf(a.grupo) - GRUPOS_GASTO.indexOf(b.grupo) || b.base - a.base)
+    .map((c, i) => ({ id: `g${i}`, grupo: c.grupo, subgrupo: c.subgrupo, coste: Math.round(c.base / 3), iva: pct(c.iva, c.base), irpf: pct(c.irpf, c.base) }));
+  const socios = [...porSocio.values()].map((x, i) => ({
+    id: `s${i}`, nombre: x.nombre, modalidad: x.nomina ? 'nomina' : 'factura',
+    coste: Math.round(x.pagado / 3 / (x.nomina ? 0.81 : 1.14) / 10) * 10,
+  }));
+  return { gastos, socios };
 }
 
 export async function prevision() {
@@ -239,12 +276,12 @@ export async function prevision() {
   // Real mes a mes (ingresos = cobros de ventas, gastos = gasto operativo, caja = saldo del banco)
   const historico = cf.meses.filter((m) => m <= ultimoMesReal).map((mes) => {
     const i = gIdx[mes];
-    let ingresos = 0, gastos = 0;
+    let ingresos = 0, gastos = 0, socios = 0;
     for (const d of i === undefined ? [] : cfG.desglose) {
       if (d.tipo === 'Cobros' && d.grupo === 'Ventas') ingresos += d.valores[i];
-      else if (esGastoOperativo(d)) gastos -= d.valores[i];
+      else if (esGastoOperativo(d)) { gastos -= d.valores[i]; if (esPagoSocio(d.subgrupo)) socios -= d.valores[i]; }
     }
-    return { mes, ingresos: r2(ingresos), gastos: r2(gastos), resultado: r2(ingresos - gastos), caja: cf.saldoFin[cf.meses.indexOf(mes)] };
+    return { mes, ingresos: r2(ingresos), gastos: r2(gastos), socios: r2(socios), resultado: r2(ingresos - gastos), caja: cf.saldoFin[cf.meses.indexOf(mes)] };
   });
 
   // Supuestos del simulador (se crean una vez a partir de la previsión anterior)
@@ -280,6 +317,13 @@ export async function prevision() {
     if (ing.mrr.length && s.restaurantes) s.ticketMedio = Math.round((ing.mrr[ing.mrr.length - 1] / s.restaurantes) * 100) / 100;
     await setAjuste('simulacion', s);
   }
+  // Gasto por categorías sin IVA y socios aparte (una sola vez, con la media real de los 3 últimos meses).
+  // Sustituye al gasto mensual con IVA de antes, que mezclaba socios e IVA
+  if (!Array.isArray(s.gastos)) {
+    const ini = await gastoInicial(ultimoMesReal);
+    s = { ...s, gastos: ini.gastos, socios: Array.isArray(s.socios) ? s.socios : ini.socios };
+    await setAjuste('simulacion', s);
+  }
 
   // Datos reales para arrancar: IVA de los meses ya cerrados del trimestre en curso y pagos pendientes a Hacienda
   const mesInicio = sumarMeses(ultimoMesReal, 1);
@@ -313,9 +357,9 @@ export async function prevision() {
   const pagos = await q(`SELECT fecha, descripcion, importe, grupo, subgrupo FROM movimientos
     WHERE tipo = 'Pagos' AND importe < 0 AND fecha >= ? AND COALESCE(grupo, '') != 'Impuestos y deuda' AND COALESCE(subgrupo, '') != 'IRPF'
     ORDER BY fecha, id`, [desde]);
-  const claveConcepto = (d) => d.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\*.*$/, '').replace(/[0-9]+/g, '').replace(/[^a-z&]+/g, ' ').trim();
   const porConcepto = new Map();
   for (const pg of pagos) {
+    if (esPagoSocio(pg.subgrupo)) continue; // los socios van en su propia lista
     const k = claveConcepto(pg.descripcion);
     if (!porConcepto.has(k)) porConcepto.set(k, { clave: k, pagos: [] });
     const c = porConcepto.get(k);
