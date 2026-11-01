@@ -50,7 +50,7 @@ export default function Prevision({ datos, recargar, avisar }) {
       <div className="page-head">
         <div>
           <h1>Previsión</h1>
-          <div className="sub">Simulador de caja desde el último mes real ({nombreMes(pv.ultimoMesReal)}). Mueve los controles y mira cómo cambia. Los gastos y los socios se ponen sin IVA, lo que de verdad cuestan; la app añade el IVA para calcular la caja y los pagos a Hacienda.</div>
+          <div className="sub">Simulador de caja desde el último mes real ({nombreMes(pv.ultimoMesReal)}). Mueve los controles y mira cómo cambia. Los gastos se ponen tal cual salen del banco y los socios con su coste acordado; la app calcula el IVA y los pagos a Hacienda.</div>
         </div>
         <div className="seg">
           {[6, 12, 18, 24].map((h) => <button key={h} className={Number(s.horizonte) === h ? 'on' : ''} onClick={() => cambiar({ horizonte: h })}>{h} meses</button>)}
