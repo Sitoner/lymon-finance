@@ -74,7 +74,7 @@ export default function Importar({ cats, recargar, avisar, ir, tipo: tipoFijo, o
           {ultimoSaldo && <span className="muted">Saldo final según Revolut: <b>{fEur2(ultimoSaldo.saldo_banco)}</b> el {fFecha(ultimoSaldo.fecha)}</span>}
         </div>
         {prev.tipo === 'revolut' && <div className="muted">Las categorías se sugieren a partir de movimientos anteriores con la misma descripción.</div>}
-        {prev.tipo === 'beel' && <div className="muted">El tipo de ingreso se deduce del concepto: «Puesta en marcha» → no recurrente; «Anticipo / monedero» → no cuenta; el resto → recurrente mensual.</div>}
+        {prev.tipo === 'beel' && <div className="muted">El tipo de ingreso se deduce del concepto: «Puesta en marcha» y venta de terminales («Terminal», «Pin pad») → no recurrente; «Anticipo / monedero» → no cuenta; el resto → recurrente mensual.</div>}
 
         <div className="tbl-wrap">
           <table>

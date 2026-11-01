@@ -171,6 +171,7 @@ export function clasificarConcepto(concepto) {
   const c = String(concepto || '').toLowerCase();
   if (/anticipo|monedero/.test(c)) return { clase: 'excluida', meses: 1 };
   if (/puesta en marcha|implantaci/.test(c)) return { clase: 'puntual', meses: 1 };
+  if (/\bterminal\b|pin ?pad/.test(c) && !/\bplan\b|suscripci/.test(c)) return { clase: 'puntual', meses: 1 }; // venta de datáfonos (a clientes o distribuidores)
   if (/anual/.test(c)) return { clase: 'recurrente', meses: 12 };
   if (/semestral/.test(c)) return { clase: 'recurrente', meses: 6 };
   if (/trimestral/.test(c)) return { clase: 'recurrente', meses: 3 };
