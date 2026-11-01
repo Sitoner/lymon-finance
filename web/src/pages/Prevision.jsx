@@ -234,10 +234,7 @@ function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, p
     ? onGastos(gastos.filter((g) => g.clave !== t.clave))
     : onGastos([...gastos, { id: t.clave, clave: t.clave, nombre: t.nombre, grupo: t.grupo, subgrupo: t.subgrupo, importe: t.importe, coste: t.coste, iva: t.iva, irpf: t.irpf }]));
   const deDep = (dep) => gastos.filter((g) => (DEPARTAMENTOS.includes(g.grupo) ? g.grupo : 'Generales') === dep);
-  const suma = (lista) => lista.filter((g) => !g.desactivado).reduce((a, g) => a + (Number(g.coste) || 0), 0);
   const mesHoy = meses[0];
-  const costeSocios = socios.filter((so) => socioActivo(so, mesHoy)).reduce((a, so) => a + pagoSocio(so).costeReal, 0);
-  const total = suma(gastos) + costeSocios;
   const sumaBanco = (lista) => lista.filter((g) => !g.desactivado).reduce((a, g) => a + bancoDe(g), 0);
   const bancoSocios = socios.filter((so) => socioActivo(so, mesHoy)).reduce((a, so) => a + pagoSocio(so).banco, 0);
   const totalBanco = sumaBanco(gastos) + bancoSocios;
@@ -247,14 +244,13 @@ function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, p
     <div className="card">
       <div className="chart-title">
         <h2 style={{ margin: 0 }}>Gasto previsto al mes <span className="muted" style={{ fontWeight: 500, fontSize: 14 }}>lo que sale del banco</span></h2>
-        <span style={{ textAlign: 'right' }}><b style={{ fontSize: 20 }}>{fEur(totalBanco)}</b><span className="muted" style={{ display: 'block', fontSize: 12 }}>coste sin IVA {fEur(total)}</span></span>
+        <b style={{ fontSize: 20 }}>{fEur(totalBanco)}</b>
       </div>
       <div className="kpi-foot" style={{ marginTop: -6, marginBottom: 6 }}>
         Elige de la lista los pagos que se repiten y pon lo que esperas pagar en cada uno, tal cual sale del banco. A los socios, su coste acordado: la app calcula lo que sale del banco.
       </div>
       {DEPARTAMENTOS.map((dep) => {
         const lineas = deDep(dep), esPersonal = dep === 'Personal';
-        const sub = suma(lineas) + (esPersonal ? costeSocios : 0);
         const subBanco = sumaBanco(lineas) + (esPersonal ? bancoSocios : 0);
         const abierto = abiertos[dep] ?? esPersonal;
         const lista = conceptos.filter((t) => t.grupo === dep && (!q || `${t.nombre} ${t.subgrupo}`.toLowerCase().includes(q)));
@@ -270,7 +266,7 @@ function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, p
                 <b>{dep}</b>
                 <span className="muted" style={{ fontSize: 13 }}>{resumen}</span>
               </span>
-              <span className="row" style={{ gap: 10 }}><span className="muted" style={{ fontSize: 12 }}>coste sin IVA {fEur(sub)}</span><b>{fEur(subBanco)}</b><span className="muted">{abierto ? '▴' : '▾'}</span></span>
+              <span className="row" style={{ gap: 10 }}><b>{fEur(subBanco)}</b><span className="muted">{abierto ? '▴' : '▾'}</span></span>
             </button>
             {abierto && (
               <div style={{ padding: '0 0 10px 17px' }}>
@@ -288,7 +284,6 @@ function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, p
                     <input type="number" step={1} min={0} value={Math.round(bancoDe(g) * 100) / 100} style={{ width: 100, textAlign: 'right' }} title="Lo que sale del banco cada mes"
                       onChange={(e) => actualizar(g.id, conImporte(g, Number(e.target.value) || 0))} />
                     <span className="muted">€/mes</span>
-                    <span className="muted" style={{ fontSize: 12, minWidth: 104, textAlign: 'right' }} title="Coste para la empresa, sin IVA">sin IVA {fEur(g.coste)}</span>
                     <button className="btn sm ghost" title="Quitar" onClick={() => onGastos(gastos.filter((x) => x.id !== g.id))}>✕</button>
                   </div>
                 ))}
