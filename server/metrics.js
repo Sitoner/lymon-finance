@@ -264,6 +264,52 @@ async function gastoInicial(ultimoMesReal) {
   return { gastos, socios };
 }
 
+// Conceptos de pago para montar el gasto previsto: cada proveedor o transferencia del último año (sin socios), con su
+// departamento, el importe de su último pago (si ese día hubo varios, la suma) con y sin IVA, si se repite cada mes y si
+// se ha pagado últimamente. El IVA y el IRPF de cada uno solo sirven para calcular la caja.
+async function conceptosDePago(ultimoMesReal) {
+  const desde = sumarMeses(ultimoMesReal, -11) + '-01';
+  const desdeReciente = sumarMeses(ultimoMesReal, -2) + '-01';
+  const pagos = await q(`SELECT m.fecha, m.descripcion, m.importe, m.grupo, m.subgrupo, COALESCE(m.iva, c.iva, 0) iva, COALESCE(m.irpf, c.irpf, 0) irpf
+    FROM movimientos m LEFT JOIN categorias c ON c.tipo = m.tipo AND c.grupo = m.grupo AND c.subgrupo = m.subgrupo
+    WHERE m.tipo = 'Pagos' AND m.importe < 0 AND m.fecha >= ? AND COALESCE(m.grupo, '') != 'Impuestos y deuda' AND COALESCE(m.subgrupo, '') != 'IRPF'
+    ORDER BY m.fecha, m.id`, [desde]);
+  const porConcepto = new Map(), clavesSocios = new Set();
+  for (const pg of pagos) {
+    const k = claveConcepto(pg.descripcion);
+    if (esPagoSocio(pg.subgrupo)) { clavesSocios.add(k); continue; } // los socios van en su propia lista
+    if (!porConcepto.has(k)) porConcepto.set(k, { clave: k, pagos: [] });
+    const c = porConcepto.get(k);
+    c.pagos.push(pg); c.nombre = pg.descripcion; c.grupo = pg.grupo; c.subgrupo = pg.subgrupo; c.iva = Number(pg.iva) || 0; c.irpf = Number(pg.irpf) || 0;
+  }
+  const lista = [...porConcepto.values()].map((c) => {
+    const ultimo = c.pagos[c.pagos.length - 1].fecha;
+    const importe = -c.pagos.filter((pg) => pg.fecha === ultimo).reduce((x, pg) => x + pg.importe, 0);
+    return {
+      clave: c.clave, nombre: c.nombre, categoria: `${c.grupo} › ${c.subgrupo}`, ultimoPago: ultimo,
+      grupo: GRUPOS_GASTO.includes(c.grupo) ? c.grupo : 'Generales', subgrupo: c.subgrupo || '', iva: c.iva, irpf: c.irpf,
+      importe: r2(importe), coste: Math.round((importe * 100) / (100 + c.iva - c.irpf)),
+      meses: new Set(c.pagos.filter((pg) => pg.fecha >= desdeReciente).map((pg) => pg.fecha.slice(0, 7))).size,
+      reciente: ultimo >= desdeReciente,
+    };
+  }).sort((x, y) => (y.meses >= 2) - (x.meses >= 2) || y.reciente - x.reciente || y.importe - x.importe);
+  return { lista, clavesSocios };
+}
+
+// Línea de gasto previsto a partir de un concepto de pago (coste sin IVA)
+const lineaDeConcepto = (t, coste = t.coste) => ({ id: t.clave, clave: t.clave, nombre: t.nombre, grupo: t.grupo, subgrupo: t.subgrupo, coste, iva: t.iva, irpf: t.irpf });
+
+// Partidas antiguas (importes con IVA, elegidas de la lista) → líneas sin IVA. Los pagos a socios no: van en su lista
+function lineasDesdePartidas(partidas, { lista, clavesSocios }) {
+  return (partidas || []).filter((p) => !clavesSocios.has(p.clave)).map((p) => {
+    const t = lista.find((x) => x.clave === p.clave);
+    const importe = Number(p.importe) || 0;
+    return t
+      ? lineaDeConcepto(t, Math.round((importe * 100) / (100 + t.iva - t.irpf)))
+      : { id: p.id, nombre: p.nombre || 'Otro gasto', grupo: 'Generales', subgrupo: '', coste: Math.round(importe / 1.21), iva: 21, irpf: 0 };
+  });
+}
+
 export async function prevision() {
   const conf = await getAjuste('prevision');
   const iva = await ivaReal();
@@ -324,6 +370,13 @@ export async function prevision() {
     s = { ...s, gastos: ini.gastos, socios: Array.isArray(s.socios) ? s.socios : ini.socios };
     await setAjuste('simulacion', s);
   }
+  // Los conceptos de pago que se habían elegido a mano (con IVA) pasan a líneas sin IVA en su departamento (una sola vez)
+  const conceptos = await conceptosDePago(ultimoMesReal);
+  if (!s.gastosPorConcepto) {
+    const desdePartidas = lineasDesdePartidas(s.partidas, conceptos);
+    s = { ...s, ...(desdePartidas.length && { gastos: desdePartidas }), gastosPorConcepto: true };
+    await setAjuste('simulacion', s);
+  }
 
   // Datos reales para arrancar: IVA de los meses ya cerrados del trimestre en curso y pagos pendientes a Hacienda
   const mesInicio = sumarMeses(ultimoMesReal, 1);
@@ -350,35 +403,10 @@ export async function prevision() {
   };
   const sim = simular(s, base);
 
-  // Conceptos de pago para montar el gasto mensual: cada proveedor o transferencia del último año,
-  // con el importe de su último pago (si ese día hubo varios, la suma), si se repite cada mes y si se ha pagado últimamente
-  const desde = sumarMeses(ultimoMesReal, -11) + '-01';
-  const desdeReciente = sumarMeses(ultimoMesReal, -2) + '-01';
-  const pagos = await q(`SELECT fecha, descripcion, importe, grupo, subgrupo FROM movimientos
-    WHERE tipo = 'Pagos' AND importe < 0 AND fecha >= ? AND COALESCE(grupo, '') != 'Impuestos y deuda' AND COALESCE(subgrupo, '') != 'IRPF'
-    ORDER BY fecha, id`, [desde]);
-  const porConcepto = new Map();
-  for (const pg of pagos) {
-    if (esPagoSocio(pg.subgrupo)) continue; // los socios van en su propia lista
-    const k = claveConcepto(pg.descripcion);
-    if (!porConcepto.has(k)) porConcepto.set(k, { clave: k, pagos: [] });
-    const c = porConcepto.get(k);
-    c.pagos.push(pg); c.nombre = pg.descripcion; c.categoria = `${pg.grupo} › ${pg.subgrupo}`;
-  }
-  const gastosTipo = [...porConcepto.values()].map((c) => {
-    const ultimo = c.pagos[c.pagos.length - 1].fecha;
-    return {
-      clave: c.clave, nombre: c.nombre, categoria: c.categoria, ultimoPago: ultimo,
-      importe: r2(-c.pagos.filter((pg) => pg.fecha === ultimo).reduce((x, pg) => x + pg.importe, 0)),
-      meses: new Set(c.pagos.filter((pg) => pg.fecha >= desdeReciente).map((pg) => pg.fecha.slice(0, 7))).size,
-      reciente: ultimo >= desdeReciente,
-    };
-  }).sort((x, y) => (y.meses >= 2) - (x.meses >= 2) || y.reciente - x.reciente || y.importe - x.importe);
-
   return {
     supuestos: s,
     base,
-    gastosTipo,
+    gastosTipo: conceptos.lista,
     historico,
     ultimoMesReal,
     filas: sim.filas.map((f) => Object.fromEntries(Object.entries(f).map(([k, x]) => [k, typeof x === 'number' ? r2(x) : x]))),

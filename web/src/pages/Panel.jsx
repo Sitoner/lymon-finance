@@ -8,6 +8,7 @@ export default function Panel({ datos, ir, anio }) {
   const c = useColores();
   const cf = delAnioSeries(datos.cashflow, anio);
   const ing = delAnioSeries(datos.ingresos, anio);
+  const ingIva = datos.ingresosIva ? delAnioSeries(datos.ingresosIva, anio) : null; // mismo calendario, con IVA
   const pv = datos.prevision && { ...datos.prevision, filas: datos.prevision.filas.filter((f) => Number(f.mes.slice(0, 4)) === anio) };
   if (!cf.meses.length) return <div className="empty">No hay movimientos en {anio}.</div>;
   const hoy = mesActual();
@@ -80,7 +81,7 @@ export default function Panel({ datos, ir, anio }) {
         <Kpi label={`Caja a fin de ${fMesLargo(cf.meses[iU]).split(' ')[0].toLowerCase()}`} value={fEur(cf.saldoFin[iU])}
           foot={varCaja !== null && `${varCaja >= 0 ? '▲' : '▼'} ${fEur(Math.abs(varCaja))} vs mes anterior`} tono={varCaja >= 0 ? 'up' : 'down'} />
         <Kpi label={`MRR ${fMes(ing.meses[iMrr])}`} value={fEur(ing.mrr[iMrr])}
-          foot={varMrr !== null && `${varMrr >= 0 ? '▲' : '▼'} ${fEur(Math.abs(varMrr))} · ARPA ${fEur(ing.arpa[iMrr])}`} tono={varMrr >= 0 ? 'up' : 'down'} />
+          foot={[varMrr !== null && `${varMrr >= 0 ? '▲' : '▼'} ${fEur(Math.abs(varMrr))}`, ingIva && `${fEur(ingIva.mrr[iMrr])} con IVA`, `ARPA ${fEur(ing.arpa[iMrr])}`].filter(Boolean).join(' · ')} tono={varMrr >= 0 ? 'up' : 'down'} />
         <Kpi label="Clientes recurrentes" value={fNum(ing.cuentas[iMrr])}
           foot={`${ing.locales?.[iMrr] ? `${ing.locales[iMrr]} locales · ` : ''}+${ing.nuevas[iMrr]} altas · −${ing.bajas[iMrr]} bajas en ${fMes(ing.meses[iMrr])}`} />
         <Kpi label="Runway" value={cf.runway[iU] === null ? 'Rentable' : `${fNum(cf.runway[iU])} meses`} tono={cf.runway[iU] !== null && cf.runway[iU] < 6 ? 'down' : ''}

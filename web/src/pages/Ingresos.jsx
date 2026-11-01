@@ -34,6 +34,8 @@ export default function Ingresos({ datos, anio, cats, recargar, avisar, ir, filt
 
   const d = Math.min(rango.d, N - 1), h = Math.min(Math.max(rango.h, d), N - 1);
   const ing = recortar(todo, d, h);
+  // La otra versión (con o sin IVA), para enseñarla en pequeño junto al MRR
+  const otra = (conIva ? datos.ingresos : datos.ingresosIva) && recortar(delAnioSeries(conIva ? datos.ingresos : datos.ingresosIva, anio), d, h);
   const n = ing.meses.length;
   const sel = Math.min(Math.max(selAbs - d, 0), n - 1);
   const setSel = (i) => setSelAbs(i + d);
@@ -184,7 +186,10 @@ export default function Ingresos({ datos, anio, cats, recargar, avisar, ir, filt
         <MesNav meses={ing.meses} valor={ing.meses[sel]} onChange={(m) => setSel(ing.meses.indexOf(m))} />
       </div>
       <div className="grid g-4">
-        <Stat label="MRR" value={fEur(ing.mrr[sel])}><Delta actual={ing.mrr[sel]} anterior={sel > 0 ? ing.mrr[sel - 1] : null} /></Stat>
+        <Stat label={`MRR ${conIva ? 'con IVA' : 'sin IVA'}`} value={fEur(ing.mrr[sel])}>
+          <Delta actual={ing.mrr[sel]} anterior={sel > 0 ? ing.mrr[sel - 1] : null} />
+          {otra && <span>{fEur(otra.mrr[sel])} {conIva ? 'sin IVA' : 'con IVA'}</span>}
+        </Stat>
         <Stat label="Clientes recurrentes" value={ing.locales?.[sel] ? <>{fNum(ing.cuentas[sel])} <span className="muted" style={{ fontSize: 16, fontWeight: 500 }}>· {fNum(ing.locales[sel])} locales</span></> : fNum(ing.cuentas[sel])}>
           <span className="up">+{ing.nuevas[sel]} altas</span><span className={ing.bajas[sel] ? 'down' : 'muted'}>−{ing.bajas[sel]} bajas</span>
           {ing.ticketLocal?.[sel] ? <span>ticket por local {fEur(ing.ticketLocal[sel])}</span> : <span>ARPA {fEur(ing.arpa[sel])}</span>}

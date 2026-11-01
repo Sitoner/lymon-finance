@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ResponsiveContainer, ComposedChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine, Cell } from 'recharts';
 import { api } from '../api.js';
-import { fEur, fMes, fMesLargo, fNum } from '../format.js';
+import { fEur, fFecha, fMes, fMesLargo, fNum } from '../format.js';
 import { Stat, useColores, ejeEur, colorGrupo } from '../ui.jsx';
 import { simular, huecoSocio, pagoSocio, socioActivo, IRPF_POR_DEFECTO } from '../../../shared/simulacion.js';
 
@@ -82,7 +82,7 @@ export default function Prevision({ datos, recargar, avisar }) {
         </div>
       </div>
 
-      <GastoPrevisto gastos={s.gastos || []} socios={s.socios || []} meses={mesesFuturos}
+      <GastoPrevisto gastos={s.gastos || []} socios={s.socios || []} conceptos={pv.gastosTipo || []} meses={mesesFuturos}
         onGastos={(gastos) => cambiar({ gastos })} onSocios={(socios) => cambiar({ socios })} primero={primero} />
 
       <div className="grid g-4">
@@ -215,32 +215,49 @@ function Control({ label, valor, min, max, paso, onChange, formato, ayuda }) {
   );
 }
 
-// Gasto previsto al mes, por departamento y sin IVA. Cada línea es una categoría (con su IVA real, que solo sirve para la caja);
-// en Personal van además los socios, cada uno con su coste y su forma de cobrar
-function GastoPrevisto({ gastos, socios, meses, onGastos, onSocios, primero }) {
+const conIvaDe = (g) => ((Number(g.coste) || 0) * (100 + (Number(g.iva) || 0) - (Number(g.irpf) || 0))) / 100;
+
+// Gasto previsto al mes, por departamento y sin IVA. Cada línea es un concepto de pago elegido de la lista (o uno a mano);
+// su IVA real va por dentro y solo sirve para calcular la caja. En Personal van además los socios
+function GastoPrevisto({ gastos, socios, conceptos, meses, onGastos, onSocios, primero }) {
   const [abiertos, setAbiertos] = useState({});
+  const [eligiendo, setEligiendo] = useState(null); // departamento con la lista de pagos abierta
+  const [buscar, setBuscar] = useState('');
   const actualizar = (id, cambios) => onGastos(gastos.map((g) => (g.id === id ? { ...g, ...cambios } : g)));
-  const anadir = (grupo) => onGastos([...gastos, { id: Date.now().toString(36), grupo, subgrupo: '', coste: 0, iva: 21, irpf: 0, nuevo: true }]);
-  const deDep = (dep) => gastos.filter((g) => g.grupo === dep);
+  const anadir = (grupo) => onGastos([...gastos, { id: Date.now().toString(36), grupo, nombre: '', subgrupo: '', coste: 0, iva: 21, irpf: 0, nuevo: true }]);
+  const elegidos = new Set(gastos.map((g) => g.clave).filter(Boolean));
+  const alternar = (t) => (elegidos.has(t.clave)
+    ? onGastos(gastos.filter((g) => g.clave !== t.clave))
+    : onGastos([...gastos, { id: t.clave, clave: t.clave, nombre: t.nombre, grupo: t.grupo, subgrupo: t.subgrupo, coste: t.coste, iva: t.iva, irpf: t.irpf }]));
+  const deDep = (dep) => gastos.filter((g) => (DEPARTAMENTOS.includes(g.grupo) ? g.grupo : 'Generales') === dep);
   const suma = (lista) => lista.filter((g) => !g.desactivado).reduce((a, g) => a + (Number(g.coste) || 0), 0);
   const mesHoy = meses[0];
   const costeSocios = socios.filter((so) => socioActivo(so, mesHoy)).reduce((a, so) => a + pagoSocio(so).costeReal, 0);
   const total = suma(gastos) + costeSocios;
+  const sumaIva = (lista) => lista.filter((g) => !g.desactivado).reduce((a, g) => a + conIvaDe(g), 0);
+  const bancoSocios = socios.filter((so) => socioActivo(so, mesHoy)).reduce((a, so) => a + pagoSocio(so).banco, 0);
+  const totalIva = sumaIva(gastos) + bancoSocios;
+  const q = buscar.trim().toLowerCase();
 
   return (
     <div className="card">
       <div className="chart-title">
         <h2 style={{ margin: 0 }}>Gasto previsto al mes <span className="muted" style={{ fontWeight: 500, fontSize: 14 }}>sin IVA</span></h2>
-        <b style={{ fontSize: 20 }}>{fEur(total)}</b>
+        <span style={{ textAlign: 'right' }}><b style={{ fontSize: 20 }}>{fEur(total)}</b><span className="muted" style={{ display: 'block', fontSize: 12 }}>{fEur(totalIva)} con IVA</span></span>
       </div>
       <div className="kpi-foot" style={{ marginTop: -6, marginBottom: 6 }}>
-        Lo que cuesta cada cosa a la empresa. Arranca con la media real de los 3 últimos meses; cámbialo a lo que esperas gastar.
-        {primero && <> En {fMesLargo(primero.mes).toLowerCase()} saldrían del banco {fEur(primero.gastos)} con el IVA, que luego se recupera en parte.</>}
+        Elige de la lista los pagos que se repiten y pon lo que esperas gastar en cada uno, sin IVA.
+        {primero && <> En {fMesLargo(primero.mes).toLowerCase()} saldrían del banco {fEur(primero.gastos)} con el IVA incluido.</>}
       </div>
       {DEPARTAMENTOS.map((dep) => {
         const lineas = deDep(dep), esPersonal = dep === 'Personal';
         const sub = suma(lineas) + (esPersonal ? costeSocios : 0);
+        const subIva = sumaIva(lineas) + (esPersonal ? bancoSocios : 0);
         const abierto = abiertos[dep] ?? esPersonal;
+        const lista = conceptos.filter((t) => t.grupo === dep && (!q || `${t.nombre} ${t.subgrupo}`.toLowerCase().includes(q)));
+        const resumen = esPersonal
+          ? `${socios.filter((so) => socioActivo(so, mesHoy)).length} socios${lineas.length ? ` · ${lineas.length} más` : ''}`
+          : `${lineas.length} ${lineas.length === 1 ? 'concepto' : 'conceptos'}`;
         return (
           <div key={dep} style={{ borderTop: '1px solid var(--line)' }}>
             <button type="button" className="row" onClick={() => setAbiertos({ ...abiertos, [dep]: !abierto })}
@@ -248,26 +265,56 @@ function GastoPrevisto({ gastos, socios, meses, onGastos, onSocios, primero }) {
               <span className="row" style={{ gap: 8 }}>
                 <i style={{ width: 9, height: 9, borderRadius: '50%', background: colorGrupo(dep), display: 'inline-block' }} />
                 <b>{dep}</b>
-                <span className="muted" style={{ fontSize: 13 }}>{esPersonal ? `${socios.filter((so) => socioActivo(so, mesHoy)).length} socios${lineas.length ? ` · ${lineas.length} más` : ''}` : `${lineas.length} ${lineas.length === 1 ? 'línea' : 'líneas'}`}</span>
+                <span className="muted" style={{ fontSize: 13 }}>{resumen}</span>
               </span>
-              <span className="row" style={{ gap: 10 }}><b>{fEur(sub)}</b><span className="muted">{abierto ? '▴' : '▾'}</span></span>
+              <span className="row" style={{ gap: 10 }}><span className="muted" style={{ fontSize: 12 }}>{fEur(subIva)} con IVA</span><b>{fEur(sub)}</b><span className="muted">{abierto ? '▴' : '▾'}</span></span>
             </button>
             {abierto && (
               <div style={{ padding: '0 0 10px 17px' }}>
                 {lineas.map((g) => (
                   <div key={g.id} className="row" style={{ padding: '4px 0', flexWrap: 'nowrap', opacity: g.desactivado ? 0.5 : 1 }}>
                     <input type="checkbox" checked={!g.desactivado} onChange={(e) => actualizar(g.id, { desactivado: !e.target.checked })} title="Contar / no contar" />
-                    {g.nuevo || !g.subgrupo
-                      ? <input type="text" value={g.subgrupo} placeholder="Concepto (p. ej. nueva herramienta)" style={{ flex: 1, minWidth: 0 }} onChange={(e) => actualizar(g.id, { subgrupo: e.target.value })} />
-                      : <span style={{ flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{g.subgrupo}</span>}
-                    <span className="muted" style={{ fontSize: 12, whiteSpace: 'nowrap' }} title="IVA con el que se paga (solo para la caja)">IVA {fNum(g.iva)} %</span>
+                    {g.nuevo
+                      ? <input type="text" value={g.nombre || ''} placeholder="Concepto (p. ej. nueva herramienta)" style={{ flex: 1, minWidth: 0 }} onChange={(e) => actualizar(g.id, { nombre: e.target.value })} />
+                      : (
+                        <span style={{ flex: 1, minWidth: 0 }}>
+                          <span style={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{g.nombre || g.subgrupo}</span>
+                          {g.nombre && g.subgrupo && <span className="muted" style={{ fontSize: 12 }}>{g.subgrupo}</span>}
+                        </span>
+                      )}
                     <input type="number" step={10} min={0} value={g.coste} style={{ width: 100, textAlign: 'right' }} onChange={(e) => actualizar(g.id, { coste: Number(e.target.value) || 0 })} />
                     <span className="muted">€/mes</span>
+                    <span className="muted" style={{ fontSize: 12, minWidth: 92, textAlign: 'right' }}>{fEur(conIvaDe(g))} con IVA</span>
                     <button className="btn sm ghost" title="Quitar" onClick={() => onGastos(gastos.filter((x) => x.id !== g.id))}>✕</button>
                   </div>
                 ))}
                 {esPersonal && <Socios socios={socios} meses={meses} onChange={onSocios} />}
-                <button className="btn sm" style={{ marginTop: 6 }} onClick={() => anadir(dep)}>+ Otro gasto de {dep.toLowerCase()}</button>
+                <div className="row" style={{ marginTop: 6, gap: 6 }}>
+                  <button className="btn sm" onClick={() => { setEligiendo(eligiendo === dep ? null : dep); setBuscar(''); }}>{eligiendo === dep ? 'Cerrar la lista' : 'Elegir de la lista de pagos'}</button>
+                  <button className="btn sm ghost" onClick={() => anadir(dep)}>+ Otro gasto a mano</button>
+                </div>
+                {eligiendo === dep && (
+                  <div style={{ border: '1px solid var(--line)', borderRadius: 10, marginTop: 6, background: 'var(--surface)', boxShadow: '0 6px 18px rgba(0,0,0,.08)' }}>
+                    <div style={{ padding: 8, borderBottom: '1px solid var(--line)' }}>
+                      <input type="search" placeholder={`Buscar en los pagos de ${dep.toLowerCase()}…`} value={buscar} onChange={(e) => setBuscar(e.target.value)} style={{ width: '100%' }} autoFocus />
+                    </div>
+                    <div style={{ maxHeight: 320, overflowY: 'auto' }}>
+                      {lista.map((t) => (
+                        <label key={t.clave} className="row" style={{ padding: '7px 12px', borderBottom: '1px solid var(--line)', cursor: 'pointer', flexWrap: 'nowrap', gap: 10 }}>
+                          <input type="checkbox" checked={elegidos.has(t.clave)} onChange={() => alternar(t)} />
+                          <span style={{ flex: 1, minWidth: 0 }}>
+                            <span style={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontWeight: 500 }}>{t.nombre}</span>
+                            <span className="muted" style={{ fontSize: 12 }}>{t.subgrupo} · último pago {fFecha(t.ultimoPago)}</span>
+                          </span>
+                          {t.meses >= 2 && <span className="badge" title="Pagado en varios de los últimos 3 meses">habitual</span>}
+                          {!t.reciente && <span className="badge warn" title="No se ha pagado en los últimos 3 meses">sin pagos recientes</span>}
+                          <span style={{ fontVariantNumeric: 'tabular-nums', minWidth: 80, textAlign: 'right' }} title="Último pago, sin IVA">{fEur(t.coste)}</span>
+                        </label>
+                      ))}
+                      {!lista.length && <div className="empty" style={{ padding: 16 }}>{q ? `Nada con «${buscar}».` : 'No hay pagos de este departamento en el último año.'}</div>}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
