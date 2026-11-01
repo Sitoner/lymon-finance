@@ -15,7 +15,10 @@ export default function Prevision({ datos, recargar, avisar }) {
   const [verDetalle, setVerDetalle] = useState(false);
   const [modalidadHueco, setModalidadHueco] = useState('nomina');
   const temporizador = useRef(null);
-  useEffect(() => setS(pv?.supuestos), [pv?.supuestos]);
+  // Cambios hechos aquí y cambios ya guardados: mientras haya alguno sin guardar, lo que llega del servidor
+  // (la recarga tras guardar) no pisa lo que se está escribiendo
+  const version = useRef(0), guardada = useRef(0);
+  useEffect(() => { if (guardada.current === version.current) setS(pv?.supuestos); }, [pv?.supuestos]);
   const sim = useMemo(() => (s && pv ? simular(s, pv.base) : null), [s, pv]);
   const hueco = useMemo(() => (s && pv ? huecoSocio(s, pv.base, { modalidad: modalidadHueco, cajaMinima: Number(s.cajaMinima) || 0 }) : 0), [s, pv, modalidadHueco]);
   if (!pv || !s || !sim) return <div className="empty">No hay datos suficientes para simular.</div>;
@@ -23,10 +26,11 @@ export default function Prevision({ datos, recargar, avisar }) {
   // Cambia al momento y se guarda medio segundo después del último cambio
   function cambiar(cambios) {
     const nuevo = { ...s, ...cambios };
+    const v = ++version.current;
     setS(nuevo);
     clearTimeout(temporizador.current);
     temporizador.current = setTimeout(async () => {
-      try { await api.put('/api/prevision/config', { supuestos: nuevo }); recargar(); } catch (e) { avisar(e.message, true); }
+      try { await api.put('/api/prevision/config', { supuestos: nuevo }); guardada.current = v; recargar(); } catch (e) { avisar(e.message, true); }
     }, 500);
   }
 
