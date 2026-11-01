@@ -178,6 +178,7 @@ export async function cerrar() {
 // IVA por defecto de cada subgrupo. Proveedores extranjeros (Google, Meta, SaaS) facturan sin IVA (inversión del sujeto pasivo).
 const IVA_DEFECTO = {
   'Puesta en marcha': 21, MONEI: 21, 'Suscripción': 21, 'Generación QR': 21, 'Datáfono': 21,
+  Producto: 0, 'Implantación': 21, 'Ingresos SaaS': 21, 'Otros gastos comerciales': 21,
   Soporte: 21, Infraestructura: 0, 'Gestión de datos (BBDD)': 0, Hardware: 21, Hosting: 0, IA: 0, Integraciones: 0,
   'Google Ads': 0, 'Meta Ads': 0, 'Comisión distribuidor/consultoría': 21, 'Folletos publicitarios': 21, 'Follectos publicitarios': 21,
   Otomatico: 21, Outscraper: 0, Canva: 0, Calendly: 0, CRM: 0,

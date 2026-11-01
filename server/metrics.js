@@ -193,7 +193,7 @@ export async function ingresos({ conIva = false } = {}) {
 }
 
 // ---------- previsión: simulador de caja (shared/simulacion.js), importes con IVA ----------
-const GRUPOS_GASTO = ['Producción', 'Marketing', 'Personal', 'Generales'];
+const GRUPOS_GASTO = ['Producción', 'Marketing y ventas', 'Personal', 'Generales'];
 const esGastoOperativo = (d) => d.tipo === 'Pagos' && GRUPOS_GASTO.includes(d.grupo) && d.subgrupo !== 'IRPF';
 
 // IVA real por mes: repercutido = IVA de las facturas emitidas (fecha de factura); soportado y retenciones = pagos del banco (fecha de pago)

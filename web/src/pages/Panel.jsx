@@ -2,7 +2,7 @@ import { ResponsiveContainer, ComposedChart, LineChart, BarChart, Line, Bar, XAx
 import { Kpi, Leyenda, Tip, useColores, ejeEur, delAnioSeries } from '../ui.jsx';
 import { fEur, fMes, fMesLargo, fNum, mesActual } from '../format.js';
 
-const GRUPOS_GASTO = ['Producción', 'Marketing', 'Personal', 'Generales'];
+const GRUPOS_GASTO = ['Producción', 'Marketing y ventas', 'Personal', 'Generales'];
 
 export default function Panel({ datos, ir, anio }) {
   const c = useColores();

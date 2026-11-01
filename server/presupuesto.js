@@ -9,13 +9,13 @@ const media = (a) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : 0);
 const distancia = (desde, hasta) => (Number(hasta.slice(0, 4)) - Number(desde.slice(0, 4))) * 12 + Number(hasta.slice(5, 7)) - Number(desde.slice(5, 7));
 
 // Gasto que entra en el presupuesto: los pagos operativos (el IVA que se declara no es un gasto)
-export const GRUPOS_GASTO = ['Personal', 'Producción', 'Marketing', 'Generales'];
+export const GRUPOS_GASTO = ['Personal', 'Producción', 'Marketing y ventas', 'Generales'];
 
 // Reparto recomendado para empezar: lo que suele pedir una empresa sana de software
 export const RECOMENDADO = [
   { nombre: 'Personal', tipo: 'gasto', valor: 45, categorias: ['Personal'] },
   { nombre: 'Producción', tipo: 'gasto', valor: 12, categorias: ['Producción'] },
-  { nombre: 'Marketing y ventas', tipo: 'gasto', valor: 15, categorias: ['Marketing'] },
+  { nombre: 'Marketing y ventas', tipo: 'gasto', valor: 15, categorias: ['Marketing y ventas'] },
   { nombre: 'Generales', tipo: 'gasto', valor: 8, categorias: ['Generales'] },
   { nombre: 'Reserva de impuestos', tipo: 'reserva', valor: 10, categorias: [] },
   { nombre: 'Beneficio y colchón', tipo: 'reserva', valor: 10, categorias: [] },
