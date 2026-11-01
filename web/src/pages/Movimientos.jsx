@@ -52,7 +52,7 @@ export default function Movimientos({ anio, datos, cats, recargar, avisar, filtr
       <div className="page-head">
         <div>
           <h1>Movimientos bancarios</h1>
-          <div className="sub">Equivale a la hoja «Movimientos bancarios». Cambia la categoría desde el desplegable.</div>
+          <div className="sub">Equivale a la hoja «Movimientos bancarios». Pulsa la categoría para cambiarla: escribe para buscar y elige con Enter.</div>
         </div>
         <div className="row">
         <button className="btn" onClick={() => setNuevaCat(nuevaCat ? null : { tipo: 'Pagos', grupo: 'Generales', subgrupo: '' })}>+ Categoría</button>
@@ -76,7 +76,7 @@ export default function Movimientos({ anio, datos, cats, recargar, avisar, filtr
           <input type="date" value={nuevo.fecha} onChange={(e) => setNuevo({ ...nuevo, fecha: e.target.value })} />
           <input type="text" placeholder="Descripción" style={{ flex: 1, minWidth: 180 }} value={nuevo.descripcion} onChange={(e) => setNuevo({ ...nuevo, descripcion: e.target.value })} />
           <input type="number" step="0.01" placeholder="Importe (− si es pago)" style={{ width: 170 }} value={nuevo.importe} onChange={(e) => setNuevo({ ...nuevo, importe: e.target.value })} />
-          <SelectorCategoria cats={cats} valor={nuevo} onChange={(c) => setNuevo({ ...nuevo, ...c })} />
+          <SelectorCategoria cats={cats} valor={nuevo} importe={nuevo.importe === "" ? null : Number(nuevo.importe)} onChange={(c) => setNuevo({ ...nuevo, ...c })} />
           <button className="btn pri" disabled={!nuevo.descripcion || nuevo.importe === ''} onClick={crear}>Guardar</button>
         </div>
       )}
@@ -107,7 +107,7 @@ export default function Movimientos({ anio, datos, cats, recargar, avisar, filtr
                   {m.descripcion}
                   <small>{[m.referencia, m.origen !== 'revolut' ? `origen: ${m.origen}` : null].filter(Boolean).join(' · ') || ' '}</small>
                 </div>
-                <SelectorCategoria cats={cats} valor={m} onChange={(c) => categorizar(m, c)} />
+                <SelectorCategoria cats={cats} valor={m} importe={m.importe} onChange={(c) => categorizar(m, c)} />
                 <span className={`amt ${m.importe < 0 ? '' : 'pos'}`}>{m.importe > 0 ? '+' : ''}{fEur2(m.importe)}</span>
                 <button className={`btn sm ${m._confirmar ? '' : 'ghost'}`} title="Borrar" onClick={() => borrar(m)}>{m._confirmar ? '¿Borrar?' : '✕'}</button>
               </div>

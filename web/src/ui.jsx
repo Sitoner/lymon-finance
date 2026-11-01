@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { fEur, fMesLargo } from './format.js';
 
 // Lee los colores del tema (cambian con modo claro/oscuro) para pasárselos a Recharts
@@ -55,29 +56,162 @@ export function Tip({ active, payload, label, series, titulo = fMesLargo }) {
   );
 }
 
-// Selector de categoría en un solo desplegable: optgroups "Tipo · Grupo" con sus subgrupos
-export function SelectorCategoria({ cats, valor, onChange, vacio = 'Sin categoría' }) {
-  const grupos = [];
-  for (const c of cats) {
-    const g = `${c.tipo} · ${c.grupo}`;
-    let item = grupos.find((x) => x.g === g);
-    if (!item) grupos.push((item = { g, opts: [] }));
-    item.opts.push(c);
-  }
-  const v = valor?.tipo ? `${valor.tipo}|${valor.grupo}|${valor.subgrupo}` : '';
+// ---------- Selector de categoría: botón + buscador flotante ----------
+const COLOR_GRUPO = { 'Producción': 'var(--series-1)', 'Marketing y ventas': 'var(--series-2)', Personal: 'var(--series-3)', Generales: 'var(--series-4)', Ventas: 'var(--pos)' };
+export const colorGrupo = (grupo) => COLOR_GRUPO[grupo] || 'var(--text-3)';
+const claveCat = (c) => `${c.tipo}|${c.grupo}|${c.subgrupo}`;
+const normal = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+// Últimas categorías elegidas en este navegador (solo para ponerlas arriba; si no hay almacenamiento, no pasa nada)
+const RECIENTES = 'lymon:categorias-recientes';
+const leerRecientes = () => { try { return JSON.parse(localStorage.getItem(RECIENTES)) || []; } catch { return []; } };
+const guardarReciente = (k) => { try { localStorage.setItem(RECIENTES, JSON.stringify([k, ...leerRecientes().filter((x) => x !== k)].slice(0, 4))); } catch { /* sin almacenamiento */ } };
+
+const Chevron = () => <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+const Lupa = () => <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.75" fill="none" stroke="currentColor" strokeWidth="1.5" /><path d="m10.5 10.5 3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>;
+const Check = () => <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+
+// importe (opcional): con signo, para enseñar primero las categorías que encajan (un pago no va a Cobros ni al revés)
+export function SelectorCategoria({ cats, valor, onChange, vacio = 'Sin categoría', importe }) {
+  const [abierto, setAbierto] = useState(false);
+  const boton = useRef(null);
+  const actual = valor?.tipo ? { tipo: valor.tipo, grupo: valor.grupo, subgrupo: valor.subgrupo } : null;
+  const cerrar = (devolverFoco) => { setAbierto(false); if (devolverFoco) boton.current?.focus(); };
   return (
-    <select className={`cat ${v ? '' : 'vacio'}`} value={v} title={v ? v.split('|').join(' › ') : vacio}
-      onChange={(e) => {
-        const [tipo, grupo, subgrupo] = e.target.value ? e.target.value.split('|') : [null, null, null];
-        onChange({ tipo, grupo, subgrupo });
-      }}>
-      <option value="">{vacio}</option>
-      {grupos.map((g) => (
-        <optgroup key={g.g} label={g.g}>
-          {g.opts.map((c) => <option key={c.subgrupo} value={`${c.tipo}|${c.grupo}|${c.subgrupo}`}>{c.subgrupo}</option>)}
-        </optgroup>
-      ))}
-    </select>
+    <>
+      <button type="button" ref={boton} className={`catsel ${actual ? '' : 'vacio'} ${abierto ? 'abierto' : ''}`}
+        title={actual ? `${actual.grupo} › ${actual.subgrupo}` : vacio} aria-haspopup="listbox" aria-expanded={abierto}
+        onClick={() => setAbierto(!abierto)}
+        onKeyDown={(e) => { if (e.key === 'ArrowDown' && !abierto) { e.preventDefault(); setAbierto(true); } }}>
+        <i className="dot" style={{ background: actual ? colorGrupo(actual.grupo) : 'var(--warning)' }} />
+        <span className="catsel-t">{actual ? actual.subgrupo : vacio}</span>
+        {actual && `${actual.subgrupo}${actual.grupo}`.length <= 24 && <span className="catsel-g">{actual.grupo}</span>}
+        <Chevron />
+      </button>
+      {abierto && (
+        <PanelCategorias cats={cats} actual={actual} importe={importe} ancla={boton.current} onCerrar={cerrar}
+          onElegir={(c) => {
+            if (c) guardarReciente(claveCat(c));
+            onChange(c ? { tipo: c.tipo, grupo: c.grupo, subgrupo: c.subgrupo } : { tipo: null, grupo: null, subgrupo: null });
+            cerrar(true);
+          }} />
+      )}
+    </>
+  );
+}
+
+function PanelCategorias({ cats, actual, importe, ancla, onCerrar, onElegir }) {
+  const [texto, setTexto] = useState('');
+  const [todas, setTodas] = useState(false);
+  const [activo, setActivo] = useState(0);
+  const [pos, setPos] = useState(null);
+  const caja = useRef(null), lista = useRef(null), buscador = useRef(null);
+
+  // Opciones: primero las recientes (sin buscar), luego por grupo. Al buscar se mira nombre, grupo y tipo, sin tildes
+  const encaja = (c) => importe == null || todas || !Number(importe) || (importe < 0 ? c.tipo !== 'Cobros' : c.tipo !== 'Pagos');
+  const t = normal(texto.trim());
+  const coincide = (c) => normal(`${c.subgrupo} ${c.grupo} ${c.tipo}`).includes(t);
+  let base = cats.filter(encaja);
+  let filtradas = t ? base.filter(coincide) : base;
+  if (t && !filtradas.length) filtradas = cats.filter(coincide); // si no hay nada entre las que encajan, busca en todas
+  const recientes = t ? [] : leerRecientes().map((k) => filtradas.find((c) => claveCat(c) === k)).filter(Boolean).slice(0, 3);
+  const secciones = [];
+  if (recientes.length) secciones.push({ titulo: 'Recientes', items: recientes, reciente: true });
+  for (const c of filtradas) {
+    const k = `${c.tipo}|${c.grupo}`;
+    let s = secciones.find((x) => x.k === k);
+    if (!s) secciones.push((s = { k, titulo: c.grupo, tipo: c.tipo, items: [] }));
+    s.items.push(c);
+  }
+  const planas = secciones.flatMap((s) => s.items);
+  const opciones = actual ? [...planas, null] : planas; // null = quitar la categoría
+  useEffect(() => { setActivo(0); }, [texto, todas]);
+
+  // Posición: debajo del botón (o encima si no cabe); en móvil, hoja pegada abajo
+  useLayoutEffect(() => {
+    const colocar = () => {
+      const r = ancla.getBoundingClientRect(), W = innerWidth, H = innerHeight;
+      if (W < 600) return setPos({ left: 8, right: 8, bottom: 8, maxHeight: Math.round(H * 0.7) });
+      const ancho = Math.min(340, W - 16), left = Math.max(8, Math.min(r.left, W - ancho - 8));
+      const abajo = H - r.bottom - 12, arriba = r.top - 12;
+      setPos(abajo >= 320 || abajo >= arriba
+        ? { left, width: ancho, top: r.bottom + 6, maxHeight: Math.min(420, abajo) }
+        : { left, width: ancho, bottom: H - r.top + 6, maxHeight: Math.min(420, arriba) });
+    };
+    colocar();
+    const fuera = (e) => { if (!caja.current?.contains(e.target) && !ancla.contains(e.target)) onCerrar(false); };
+    const scroll = (e) => { if (!caja.current?.contains(e.target)) onCerrar(false); };
+    document.addEventListener('mousedown', fuera);
+    addEventListener('scroll', scroll, true);
+    addEventListener('resize', colocar);
+    return () => { document.removeEventListener('mousedown', fuera); removeEventListener('scroll', scroll, true); removeEventListener('resize', colocar); };
+  }, []); // eslint-disable-line
+
+  // Sin mover la página: cualquier scroll fuera del panel lo cierra
+  useEffect(() => { if (pos) buscador.current?.focus({ preventScroll: true }); }, [!pos]); // eslint-disable-line
+  useEffect(() => {
+    const l = lista.current, op = l?.querySelector('.catpop-op.on');
+    if (!op) return;
+    if (op.offsetTop < l.scrollTop) l.scrollTop = op.offsetTop - 28;
+    else if (op.offsetTop + op.offsetHeight > l.scrollTop + l.clientHeight) l.scrollTop = op.offsetTop + op.offsetHeight - l.clientHeight + 6;
+  }, [activo]);
+
+  const teclas = (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActivo((a) => Math.min(opciones.length - 1, a + 1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setActivo((a) => Math.max(0, a - 1)); }
+    else if (e.key === 'Enter') { e.preventDefault(); if (opciones.length) onElegir(opciones[activo]); }
+    else if (e.key === 'Escape') { e.preventDefault(); onCerrar(true); }
+    else if (e.key === 'Tab') onCerrar(false);
+  };
+
+  let i = -1;
+  const opcion = (c, reciente) => {
+    i++;
+    const n = i, elegida = actual && c && claveCat(c) === claveCat(actual);
+    return (
+      <button type="button" key={(reciente ? 'r:' : '') + claveCat(c)} role="option" aria-selected={elegida}
+        className={`catpop-op ${n === activo ? 'on' : ''} ${reciente ? 'reciente' : ''}`}
+        onMouseEnter={() => setActivo(n)} onClick={() => onElegir(c)}>
+        {reciente && <i className="dot" style={{ background: colorGrupo(c.grupo) }} />}
+        <span className="t">{c.subgrupo}</span>
+        {reciente && <span className="g">{c.grupo}</span>}
+        {elegida && <span className="check"><Check /></span>}
+      </button>
+    );
+  };
+
+  if (!pos) return null;
+  return createPortal(
+    <div className="catpop" ref={caja} style={pos} role="dialog" aria-label="Elegir categoría">
+      <div className="catpop-buscar">
+        <Lupa />
+        <input ref={buscador} type="text" value={texto} placeholder="Buscar categoría…" onChange={(e) => setTexto(e.target.value)} onKeyDown={teclas}
+          role="combobox" aria-expanded="true" aria-autocomplete="list" />
+      </div>
+      <div className="catpop-lista" ref={lista} role="listbox">
+        {secciones.map((s) => (
+          <div key={s.k || s.titulo}>
+            <div className="catpop-sec">
+              {!s.reciente && <i className="dot" style={{ background: colorGrupo(s.titulo) }} />}
+              {s.titulo}
+              {s.tipo && !['Pagos', 'Cobros'].includes(s.tipo) && <small>{s.tipo}</small>}
+            </div>
+            {s.items.map((c) => opcion(c, s.reciente))}
+          </div>
+        ))}
+        {!planas.length && <div className="catpop-vacio">Ninguna categoría con «{texto}»</div>}
+        {actual && (() => { i++; const n = i; return (
+          <button type="button" className={`catpop-op quitar ${n === activo ? 'on' : ''}`} onMouseEnter={() => setActivo(n)} onClick={() => onElegir(null)}>Quitar categoría</button>
+        ); })()}
+      </div>
+      <div className="catpop-pie">
+        <span><kbd>↑</kbd><kbd>↓</kbd> <kbd>Enter</kbd> para elegir</span>
+        {importe != null && Number(importe) !== 0 && (
+          <button type="button" onClick={() => setTodas(!todas)}>{todas ? (importe < 0 ? 'Solo de pagos' : 'Solo de cobros') : 'Ver todas'}</button>
+        )}
+      </div>
+    </div>,
+    document.body,
   );
 }
 

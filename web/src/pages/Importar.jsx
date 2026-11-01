@@ -89,7 +89,7 @@ export default function Importar({ cats, recargar, avisar, ir, tipo: tipoFijo, o
                   <td>{fFecha(f.fecha)}</td>
                   <td style={{ whiteSpace: 'normal' }}>{f.descripcion}{f.referencia && <div className="muted" style={{ fontSize: 12 }}>{f.referencia}</div>}</td>
                   <td className={`n ${f.importe < 0 ? 'neg' : ''}`}>{fEur2(f.importe)}</td>
-                  <td><SelectorCategoria cats={cats} valor={f} onChange={(c) => actualizar(f._i, c)} /></td>
+                  <td><SelectorCategoria cats={cats} valor={f} importe={f.importe} onChange={(c) => actualizar(f._i, c)} /></td>
                 </tr>
               ) : (
                 <tr key={f._i}>
