@@ -162,6 +162,14 @@ ruta('PUT', '/prevision/config', async ({ body }) => {
   return prevision();
 });
 
+// Tipo del Impuesto de Sociedades para la estimación (15 % empresa de nueva creación; si no, el que diga la gestoría)
+ruta('PUT', '/sociedades', async ({ body }) => {
+  const tipo = Number(body?.tipo);
+  if (!(tipo >= 0 && tipo <= 50)) throw new Fallo('Tipo no válido');
+  await setAjuste('sociedades', { tipo });
+  return impuestos();
+});
+
 ruta('PUT', '/impuestos/:trimestre', async ({ params, body }) => {
   const m = await getAjuste('impuestosPagados', {});
   if (body?.pagado) m[params.trimestre] = true; else delete m[params.trimestre];

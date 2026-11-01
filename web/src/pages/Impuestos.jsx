@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { api } from '../api.js';
 import { Stat } from '../ui.jsx';
 import { fEur, fMesLargo } from '../format.js';
@@ -18,6 +18,10 @@ export default function Impuestos({ datos, recargar, avisar, anio }) {
   async function marcar(t, pagado) {
     try { setImp(await api.put(`/api/impuestos/${t.trimestre}`, { pagado })); recargar(); } catch (e) { avisar(e.message, true); }
   }
+  async function cambiarTipo(tipo) {
+    try { setImp(await api.put('/api/sociedades', { tipo })); recargar(); } catch (e) { avisar(e.message, true); }
+  }
+  const soc = imp.sociedades;
 
   return (
     <div className="stack">
@@ -25,7 +29,7 @@ export default function Impuestos({ datos, recargar, avisar, anio }) {
         <div>
           <h1>Impuestos</h1>
           <div className="sub">
-            Lo que tendréis que pagar a Hacienda por el IVA (modelo 303) y por las retenciones de IRPF de las facturas de los socios (modelo 111).
+            Lo que tendréis que pagar a Hacienda por el IVA (modelo 303), por las retenciones de IRPF de socios y nóminas (modelo 111) y por el Impuesto de Sociedades (modelo 200, estimado).
             Se calcula con tus facturas de Beel y los movimientos del banco, con el IVA e IRPF de cada categoría.
           </div>
         </div>
@@ -40,9 +44,11 @@ export default function Impuestos({ datos, recargar, avisar, anio }) {
         </Stat>
         <Stat label="Saldo en el banco" value={fEur(imp.saldo)}><span>según el último extracto importado</span></Stat>
         <Stat label="Caja libre de impuestos" value={fEur(imp.cajaLibre)} tono={imp.cajaLibre < 0 ? 'neg' : ''}>
-          <span>saldo − {fEur(imp.pendiente)} pendientes con Hacienda</span>
+          <span>saldo − {fEur(imp.pendiente)} de IVA e IRPF{soc?.pendiente ? ` − ${fEur(soc.pendiente)} de Sociedades` : ''}</span>
         </Stat>
       </div>
+
+      {soc && <Sociedades soc={soc} anio={anio} onTipo={cambiarTipo} />}
 
       {atrasados.length > 0 && (
         <div className="alert warn">
@@ -102,6 +108,52 @@ export default function Impuestos({ datos, recargar, avisar, anio }) {
       {!trims.length && <div className="empty">No hay trimestres de {anio}.</div>}
       <div className="kpi-foot">
         Es una estimación para que no os pille por sorpresa: la declaración oficial la hace vuestra gestoría. El IVA cobrado sale de las facturas de Beel; el pagado y las retenciones, de los movimientos del banco según el IVA e IRPF de cada categoría (revísalos en «Categorías e IVA»).
+      </div>
+    </div>
+  );
+}
+
+// Impuesto de Sociedades: beneficio sin IVA del año (meses cerrados) × tipo. Se declara y paga en julio del año siguiente
+function Sociedades({ soc, anio, onTipo }) {
+  const [tipo, setTipo] = useState(soc.tipo);
+  useEffect(() => setTipo(soc.tipo), [soc.tipo]);
+  const anios = soc.anios.filter((x) => Number(x.anio) <= anio).slice(-2).reverse();
+  if (!anios.length) return null;
+  return (
+    <div className="card">
+      <div className="chart-title">
+        <h2 style={{ margin: 0 }}>Impuesto de Sociedades <span className="muted" style={{ fontWeight: 500, fontSize: 14 }}>modelo 200 · estimación</span></h2>
+        <label className="row" style={{ gap: 6 }}>
+          Tipo
+          <input type="number" min={0} max={50} step={1} value={tipo} style={{ width: 64, textAlign: 'right', fontWeight: 650 }}
+            onChange={(e) => setTipo(e.target.value)} onBlur={() => Number(tipo) !== soc.tipo && onTipo(Number(tipo) || 0)}
+            onKeyDown={(e) => e.key === 'Enter' && e.target.blur()} />
+          %
+        </label>
+      </div>
+      <div className="grid g-2" style={{ gap: 24, marginTop: 6 }}>
+        {anios.map((x) => (
+          <div key={x.anio}>
+            <div className="section-t">
+              <span>Año {x.anio}</span>
+              <span className={`badge ${x.estado === 'en curso' ? 'warn' : x.estado === 'vencido' ? '' : 'warn'}`} style={{ textTransform: 'none', letterSpacing: 0 }}>
+                {x.estado === 'en curso' ? `en curso · ${x.meses} ${x.meses === 1 ? 'mes cerrado' : 'meses cerrados'}` : x.estado === 'pendiente' ? `se paga hasta el ${fFechaLarga(x.vence)}` : `declarado en julio de ${Number(x.anio) + 1}`}
+              </span>
+            </div>
+            <div className="tip-r" style={{ padding: '4px 0' }}><span>Beneficio sin IVA {x.estado === 'en curso' ? 'hasta hoy' : ''}</span><span className={x.beneficio < 0 ? 'neg' : ''}>{fEur(x.beneficio)}</span></div>
+            <div className="tip-r" style={{ padding: '4px 0' }}><span>× tipo</span><span>{soc.tipo} %</span></div>
+            <div className="tip-r" style={{ padding: '6px 0', borderTop: '1px solid var(--line)', marginTop: 4, fontWeight: 650 }}>
+              <span style={{ color: 'var(--text)' }}>{x.beneficio <= 0 ? 'Sin cuota (pérdidas)' : x.estado === 'en curso' ? 'Cuota devengada hasta hoy' : 'Cuota estimada'}</span>
+              <span>{fEur(x.cuota)}</span>
+            </div>
+            {x.estado === 'en curso' && <div className="kpi-foot">Se paga en julio de {Number(x.anio) + 1}. Lo que falta del año lo estima la Previsión.</div>}
+          </div>
+        ))}
+      </div>
+      <div className="kpi-foot" style={{ marginTop: 10 }}>
+        Beneficio = lo facturado sin IVA (Beel) − los gastos sin IVA del banco (con los socios) − intereses de préstamos. El 15 % es el de empresa de nueva creación
+        (primer año con beneficio y el siguiente); después, el que os diga la gestoría. Si un año sale cuota, al siguiente hay pagos a cuenta (modelo 202) en abril, octubre y diciembre.
+        La base real la ajusta la gestoría (amortizaciones, gastos no deducibles, pérdidas de años anteriores…).
       </div>
     </div>
   );

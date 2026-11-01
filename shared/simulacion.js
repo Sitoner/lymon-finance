@@ -65,6 +65,13 @@ export function simular(s, base) {
   let compensar = base.compensarIva || 0;
   let restaurantes = Number(s.restaurantes) || 0;
   let caja = base.cajaInicial;
+  // Impuesto de Sociedades: beneficio de cada año (el real hasta hoy + el margen previsto) al tipo elegido.
+  // Se paga en julio del año siguiente (modelo 200), menos lo adelantado en los pagos a cuenta (modelo 202: 18 % de la
+  // última cuota declarada, en abril, octubre y diciembre)
+  const tipoIS = Number(base.sociedades?.tipo ?? 15) / 100;
+  const beneficioAnio = { ...(base.sociedades?.beneficio || {}) };
+  const cuotaIS = (anio) => Math.max(0, beneficioAnio[anio] || 0) * tipoIS;
+  const aCuenta = {};
 
   for (let k = 0; k < (Number(s.horizonte) || 12); k++) {
     const mes = sumarMeses(base.mesInicio, k);
@@ -113,13 +120,22 @@ export function simular(s, base) {
         hacienda += Math.max(0, q) + trimestre.reduce((x, y) => x + y.ret, 0);
       }
     }
-    if (!s.incluirHacienda) hacienda = 0;
+    const anio = Number(mes.slice(0, 4)), numMes = Number(mes.slice(5, 7));
+    beneficioAnio[anio] = (beneficioAnio[anio] || 0) + margen;
+    let sociedades = 0;
+    if (numMes === 7) sociedades += Math.max(0, cuotaIS(anio - 1) - (aCuenta[anio - 1] || 0));
+    if ([4, 10, 12].includes(numMes)) {
+      const ultimaDeclarada = cuotaIS(numMes === 4 ? anio - 2 : anio - 1); // en abril aún no se ha declarado el año anterior
+      if (ultimaDeclarada > 0) { const p = ultimaDeclarada * 0.18; sociedades += p; aCuenta[anio] = (aCuenta[anio] || 0) + p; }
+    }
+    hacienda += sociedades;
+    if (!s.incluirHacienda) { hacienda = 0; sociedades = 0; }
 
     const resultado = ingresos - gastos;
     caja += resultado - hacienda;
     const bajas = Math.min(pagando, Number(s.bajasMes) || 0);
     filas.push({ mes, restaurantesInicio: pagando, vendidos, nuevos, bajas, cuotas, puestas, ingresoExtra, gastoExtra, ingresos, gastos, generales, costeGenerales: g.base,
-      socios: deSocios('banco'), costeSocios: deSocios('costeReal'), margen, resultado, hacienda, caja, ajustes: activos.map((a) => a.concepto) });
+      socios: deSocios('banco'), costeSocios: deSocios('costeReal'), margen, resultado, hacienda, sociedades, caja, ajustes: activos.map((a) => a.concepto) });
     restaurantes = pagando - bajas;
   }
 

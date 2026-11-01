@@ -400,6 +400,9 @@ export async function prevision() {
     ivaMesesReales,
     pagosPendientes,
     compensarIva: ultimoCerrado ? ultimoCerrado.compensarSiguiente : 0,
+    // Sociedades: beneficio real de cada año hasta el último mes real; la simulación le suma el margen de los meses previstos
+    sociedades: { tipo: imp.sociedades.tipo, beneficio: Object.entries(imp.sociedades.beneficioPorMes).filter(([m]) => m <= ultimoMesReal)
+      .reduce((a, [m, v]) => ({ ...a, [m.slice(0, 4)]: (a[m.slice(0, 4)] || 0) + v }), {}) },
   };
   const sim = simular(s, base);
 
@@ -412,6 +415,38 @@ export async function prevision() {
     filas: sim.filas.map((f) => Object.fromEntries(Object.entries(f).map(([k, x]) => [k, typeof x === 'number' ? r2(x) : x]))),
     resumen: sim.resumen,
   };
+}
+
+// ---------- Impuesto de Sociedades (estimación) ----------
+// Beneficio de cada mes, sin IVA: lo facturado que cuenta como ingreso (base de Beel) menos el gasto operativo del banco
+// (con los socios; sin el IVA, que no es gasto) y los intereses de préstamos. Es una aproximación: amortizaciones,
+// gastos no deducibles y demás ajustes los hace la gestoría en la declaración.
+async function beneficioPorMes() {
+  const porMes = {};
+  for (const r of await q("SELECT substr(fecha, 1, 7) mes, SUM(base) b FROM facturas WHERE clase != 'excluida' GROUP BY 1")) porMes[r.mes] = Number(r.b) || 0;
+  const movs = await q(`SELECT substr(m.fecha, 1, 7) mes, m.importe, m.tipo, m.grupo, m.subgrupo, COALESCE(m.iva, c.iva, 0) iva, COALESCE(m.irpf, c.irpf, 0) irpf
+    FROM movimientos m LEFT JOIN categorias c ON c.tipo = m.tipo AND c.grupo = m.grupo AND c.subgrupo = m.subgrupo
+    WHERE (m.tipo = 'Pagos' AND m.grupo IN (${GRUPOS_GASTO.map(() => '?').join(', ')}) AND m.subgrupo != 'IRPF') OR m.subgrupo = 'Préstamos - Pago intereses'`, GRUPOS_GASTO);
+  for (const m of movs) porMes[m.mes] = (porMes[m.mes] || 0) + (m.importe * 100) / (100 + m.iva - m.irpf);
+  return porMes;
+}
+
+export const TIPO_SOCIEDADES = 15; // empresa de nueva creación: 15 % el primer año con beneficio y el siguiente
+export async function sociedades() {
+  const tipo = Number((await getAjuste('sociedades', {})).tipo ?? TIPO_SOCIEDADES);
+  const porMes = await beneficioPorMes();
+  const hoy = new Date().toISOString().slice(0, 10), mesHoy = hoy.slice(0, 7);
+  const anios = [...new Set(Object.keys(porMes).map((m) => m.slice(0, 4)))].sort();
+  const lista = anios.map((anio) => {
+    const meses = Object.keys(porMes).filter((m) => m.startsWith(anio) && m < mesHoy).sort(); // meses cerrados
+    const beneficio = meses.reduce((a, m) => a + porMes[m], 0);
+    const vence = `${Number(anio) + 1}-07-25`; // modelo 200: del 1 al 25 de julio del año siguiente
+    return { anio, meses: meses.length, beneficio: r2(beneficio), cuota: r2((Math.max(0, beneficio) * tipo) / 100), vence,
+      estado: anio === hoy.slice(0, 4) ? 'en curso' : hoy <= vence ? 'pendiente' : 'vencido' };
+  });
+  // Lo que se debe a Hacienda por Sociedades a día de hoy: el año en curso (hasta el último mes cerrado) y el anterior si aún no ha vencido
+  const pendiente = lista.filter((x) => x.estado !== 'vencido').reduce((a, x) => a + x.cuota, 0);
+  return { tipo, anios: lista, pendiente: r2(pendiente), beneficioPorMes: Object.fromEntries(Object.entries(porMes).map(([m, v]) => [m, r2(v)])) };
 }
 
 // ---------- impuestos: IVA (modelo 303) e IRPF retenido (modelo 111) por trimestre ----------
@@ -428,7 +463,7 @@ export async function impuestos() {
   // Desde el primer mes con facturas: antes no hay IVA repercutido y el cálculo no sería completo
   const primerMes = Object.keys(rep).sort()[0];
   const meses = [...new Set([...Object.keys(rep), ...Object.keys(sop), ...Object.keys(ret)])].filter((m) => m >= primerMes).sort();
-  if (!meses.length) return { trimestres: [], hoy };
+  if (!meses.length) return { trimestres: [], hoy, sociedades: await sociedades() };
 
   // Pagos a Hacienda encontrados en el banco (por fecha del banco)
   const pagos = await q(`SELECT fecha, importe, subgrupo FROM movimientos
@@ -466,6 +501,8 @@ export async function impuestos() {
   const saldo = cf.saldoBanco.filter((x) => x !== null).pop() ?? cf.saldoFin[cf.saldoFin.length - 1];
   const pendientes = trimestres.filter((t) => t.estado === 'pendiente' || t.estado === 'en curso');
   const deuda = pendientes.reduce((a, t) => a + t.total, 0);
-  return { hoy, trimestres, saldo: r2(saldo), pendiente: r2(deuda), cajaLibre: r2(saldo - deuda) };
+  const soc = await sociedades();
+  // Caja libre: lo que queda tras apartar el IVA y el IRPF pendientes y el Sociedades que ya se va devengando
+  return { hoy, trimestres, sociedades: soc, saldo: r2(saldo), pendiente: r2(deuda), cajaLibre: r2(saldo - deuda - soc.pendiente) };
 }
 

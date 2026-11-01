@@ -38,7 +38,7 @@ export default function Prevision({ datos, recargar, avisar }) {
       mes: h.mes, ingresos: h.ingresos, gastos: h.gastos, cajaReal: h.caja,
       cajaPrev: i === historico.length - 1 ? h.caja : null, real: true,
     })),
-    ...sim.filas.map((f) => ({ mes: f.mes, ingresos: f.ingresos, gastos: f.gastos, margen: f.margen, cajaPrev: f.caja, hacienda: f.hacienda, real: false, ajustes: f.ajustes })),
+    ...sim.filas.map((f) => ({ mes: f.mes, ingresos: f.ingresos, gastos: f.gastos, margen: f.margen, cajaPrev: f.caja, hacienda: f.hacienda, sociedades: f.sociedades, real: false, ajustes: f.ajustes })),
   ];
   const mesesFuturos = sim.filas.map((f) => f.mes);
   const cColor = c['series-3'];
@@ -181,7 +181,7 @@ export default function Prevision({ datos, recargar, avisar }) {
                   <td className="n">{fEur(f.gastos)}</td>
                   <td className="n muted">{fEur(f.socios)}</td>
                   <td className={`n ${f.margen < 0 ? 'neg' : 'pos'}`}>{fEur(f.margen)}</td>
-                  <td className="n">{f.hacienda ? <span className="neg">{fEur(-f.hacienda)}</span> : <span className="muted">–</span>}</td>
+                  <td className="n">{f.hacienda ? <span className="neg">{fEur(-f.hacienda)}</span> : <span className="muted">–</span>}{f.sociedades > 0 && <div className="muted" style={{ fontSize: 12 }}>Sociedades {fEur(f.sociedades)}</div>}</td>
                   <td className={`n ${f.caja < 0 ? 'neg' : ''}`} style={{ fontWeight: 650 }}>{fEur(f.caja)}</td>
                   <td className="muted" style={{ fontSize: 12.5 }}>{f.ajustes.join(', ')}</td>
                 </tr>
@@ -193,7 +193,7 @@ export default function Prevision({ datos, recargar, avisar }) {
       <div className="kpi-foot">
         Ingresos = locales pagando × ticket + locales vendidos × puesta en marcha, más el IVA medio real de tus ventas ({fNum(pv.base.tipos.ivaVentas)} %).
         Gastos = cada línea de gasto con su IVA real, más lo que se paga a los socios (por factura con IVA y menos IRPF; por nómina menos IRPF, y la cuota si la paga la empresa).
-        Hacienda: IVA y retenciones de cada trimestre, pagados en enero, abril, julio y octubre{Object.keys(pv.base.pagosPendientes || {}).length ? ` (incluye el pago pendiente de ${Object.entries(pv.base.pagosPendientes).map(([m, v]) => `${fEur(v)} en ${fMesLargo(m).toLowerCase()}`).join(', ')})` : ''}.
+        Hacienda: IVA y retenciones de cada trimestre, pagados en enero, abril, julio y octubre; y el Impuesto de Sociedades al {fNum(pv.base.sociedades?.tipo ?? 15)} % del beneficio sin IVA de cada año (real hasta hoy + margen previsto), en julio del año siguiente, con sus pagos a cuenta en abril, octubre y diciembre si el año anterior salió cuota{Object.keys(pv.base.pagosPendientes || {}).length ? ` (incluye el pago pendiente de ${Object.entries(pv.base.pagosPendientes).map(([m, v]) => `${fEur(v)} en ${fMesLargo(m).toLowerCase()}`).join(', ')})` : ''}.
       </div>
     </div>
   );
@@ -389,7 +389,7 @@ function TipSim({ active, payload, label, c }) {
       <div className="tip-r"><span><i style={{ display: 'inline-block', width: 8, height: 8, borderRadius: 2, background: c['series-1'], marginRight: 6 }} />Ingresos</span><span>{fEur(d.ingresos)}</span></div>
       <div className="tip-r"><span><i style={{ display: 'inline-block', width: 8, height: 8, borderRadius: 2, background: c['series-2'], marginRight: 6 }} />Gastos</span><span>{fEur(d.gastos)}</span></div>
       {d.margen !== undefined && <div className="tip-r"><span>Margen sin IVA</span><span>{fEur(d.margen)}</span></div>}
-      {d.hacienda > 0 && <div className="tip-r"><span>Pago a Hacienda</span><span>−{fEur(d.hacienda)}</span></div>}
+      {d.hacienda > 0 && <div className="tip-r"><span>Pago a Hacienda{d.sociedades > 0 ? ` (${fEur(d.sociedades)} de Sociedades)` : ''}</span><span>−{fEur(d.hacienda)}</span></div>}
       <div className="tip-r" style={{ fontWeight: 650 }}><span>Caja a fin de mes</span><span>{fEur(caja)}</span></div>
       {d.ajustes?.length > 0 && <div className="muted" style={{ marginTop: 4 }}>{d.ajustes.join(', ')}</div>}
     </div>
